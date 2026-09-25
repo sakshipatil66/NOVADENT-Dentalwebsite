@@ -8,8 +8,11 @@ import {
   Star,
   Heart,
   MessageSquare,
-  CheckCircle2,
 } from "lucide-react";
+
+/* =========================================================
+   REVIEWS DATA
+   ========================================================= */
 
 const reviews = [
   {
@@ -42,11 +45,19 @@ const reviews = [
   },
 ];
 
+/* =========================================================
+   TRUST POINTS
+   ========================================================= */
+
 const stats = [
   ["01", "Patient First", "Care designed around comfort."],
   ["02", "Modern Care", "Technology with a human touch."],
   ["03", "Trusted Team", "Experienced dental professionals."],
 ];
+
+/* =========================================================
+   STAR COMPONENT
+   ========================================================= */
 
 function Stars({ size = 16 }) {
   return (
@@ -62,11 +73,19 @@ function Stars({ size = 16 }) {
   );
 }
 
+/* =========================================================
+   REVIEWS PAGE
+   ========================================================= */
+
 export default function Reviews() {
   const [activeReview, setActiveReview] = useState(0);
   const [paused, setPaused] = useState(false);
 
   const currentReview = reviews[activeReview];
+
+  /* =======================================================
+     NEXT REVIEW
+  ======================================================= */
 
   const nextReview = () => {
     setActiveReview((current) =>
@@ -74,11 +93,19 @@ export default function Reviews() {
     );
   };
 
+  /* =======================================================
+     PREVIOUS REVIEW
+  ======================================================= */
+
   const previousReview = () => {
     setActiveReview((current) =>
       current === 0 ? reviews.length - 1 : current - 1
     );
   };
+
+  /* =======================================================
+     AUTO SLIDER
+  ======================================================= */
 
   useEffect(() => {
     if (paused) return;
@@ -95,34 +122,47 @@ export default function Reviews() {
   return (
     <main className="novaReviewsPage">
 
-      {/* ================= HERO ================= */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section
         className="novaReviewsHero"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
+
         <div className="novaReviewsHeroGlow"></div>
 
         <div className="novaReviewsContainer">
+
           <div className="novaReviewsHeroContent">
+
+            {/* EYEBROW */}
 
             <span className="novaReviewsEyebrow">
               <MessageSquare size={15} />
               NOVADENT · PATIENT STORIES
             </span>
 
+            {/* HEADING */}
+
             <h1>
               Smiles that speak
               <em> for themselves.</em>
             </h1>
+
+            {/* DESCRIPTION */}
 
             <p>
               Discover what our patients say about their experience,
               treatment journey and care at NOVADENT.
             </p>
 
+            {/* HERO BUTTONS */}
+
             <div className="novaReviewsHeroActions">
+
               <a
                 href="#patientReviews"
                 className="novaReviewsPrimary"
@@ -138,31 +178,25 @@ export default function Reviews() {
                 Start Your Smile Journey
                 <ArrowRight size={17} />
               </Link>
+
             </div>
 
           </div>
 
-          <div className="novaReviewsHeroRating">
-            <Stars size={17} />
-
-            <strong>5.0</strong>
-
-            <span>Patient Experience</span>
-
-            <div className="novaRatingVerified">
-              <CheckCircle2 size={14} />
-              <span>Trusted care</span>
-            </div>
-          </div>
         </div>
+
       </section>
 
-      {/* ================= INTRO ================= */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
 
       <section className="novaReviewsIntro">
+
         <div className="novaReviewsContainer novaReviewsIntroGrid">
 
           <div>
+
             <span className="novaReviewsOverline">
               THE NOVADENT EXPERIENCE
             </span>
@@ -175,9 +209,11 @@ export default function Reviews() {
               Care you can feel.
               <em> Confidence you can see.</em>
             </h2>
+
           </div>
 
           <div className="novaReviewsIntroText">
+
             <p>
               Every patient arrives with a different concern,
               expectation and smile goal.
@@ -188,22 +224,30 @@ export default function Reviews() {
               clearly and create a comfortable experience from
               consultation to care.
             </p>
+
           </div>
 
         </div>
+
       </section>
 
-      {/* ================= FEATURED REVIEW ================= */}
+      {/* =====================================================
+          FEATURED REVIEW
+      ===================================================== */}
 
       <section
         id="patientReviews"
         className="novaReviewsFeatured"
       >
+
         <div className="novaReviewsContainer">
+
+          {/* SECTION HEADING */}
 
           <div className="novaReviewsSectionHeading">
 
             <div>
+
               <span className="novaReviewsOverline">
                 PATIENT STORIES
               </span>
@@ -216,6 +260,7 @@ export default function Reviews() {
                 Real experiences.
                 <em> Real smiles.</em>
               </h2>
+
             </div>
 
             <p>
@@ -225,14 +270,20 @@ export default function Reviews() {
 
           </div>
 
+          {/* FEATURED REVIEW */}
+
           <div
             className="novaFeaturedReview"
             key={currentReview.name}
           >
 
+            {/* QUOTE ICON */}
+
             <div className="novaFeaturedQuote">
               <Quote size={42} />
             </div>
+
+            {/* REVIEW CONTENT */}
 
             <div className="novaFeaturedContent">
 
@@ -249,13 +300,20 @@ export default function Reviews() {
                 </div>
 
                 <div>
-                  <strong>{currentReview.name}</strong>
-                  <span>{currentReview.role}</span>
+                  <strong>
+                    {currentReview.name}
+                  </strong>
+
+                  <span>
+                    {currentReview.role}
+                  </span>
                 </div>
 
               </div>
 
             </div>
+
+            {/* CONTROLS */}
 
             <div className="novaFeaturedControls">
 
@@ -285,9 +343,13 @@ export default function Reviews() {
               </div>
 
             </div>
+
           </div>
 
+          {/* REVIEW DOTS */}
+
           <div className="novaReviewDots">
+
             {reviews.map((review, index) => (
               <button
                 key={review.name}
@@ -299,14 +361,19 @@ export default function Reviews() {
                 aria-label={`Show review ${index + 1}`}
               />
             ))}
+
           </div>
 
         </div>
+
       </section>
 
-      {/* ================= TRUST POINTS ================= */}
+      {/* =====================================================
+          TRUST POINTS
+      ===================================================== */}
 
       <section className="novaReviewsTrust">
+
         <div className="novaReviewsContainer">
 
           <div className="novaReviewsTrustGrid">
@@ -316,27 +383,42 @@ export default function Reviews() {
                 className="novaReviewTrustCard"
                 key={number}
               >
-                <span>{number}</span>
+
+                <span>
+                  {number}
+                </span>
 
                 <div className="novaTrustIcon">
                   <Heart size={20} />
                 </div>
 
                 <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+
+                  <h3>
+                    {title}
+                  </h3>
+
+                  <p>
+                    {text}
+                  </p>
+
                 </div>
+
               </article>
             ))}
 
           </div>
 
         </div>
+
       </section>
 
-      {/* ================= REVIEW CARDS ================= */}
+      {/* =====================================================
+          MORE PATIENT VOICES
+      ===================================================== */}
 
       <section className="novaReviewsCardsSection">
+
         <div className="novaReviewsContainer">
 
           <div className="novaReviewsCardsHeading">
@@ -361,14 +443,22 @@ export default function Reviews() {
                 }`}
                 key={review.name}
                 onClick={() => setActiveReview(index)}
-                tabIndex="0"
+                tabIndex={0}
                 role="button"
                 onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
+
+                  if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                  ) {
+                    event.preventDefault();
                     setActiveReview(index);
                   }
+
                 }}
               >
+
+                {/* CARD TOP */}
 
                 <div className="novaReviewCardTop">
 
@@ -380,37 +470,60 @@ export default function Reviews() {
 
                 </div>
 
+                {/* QUOTE */}
+
                 <Quote
                   className="novaReviewCardQuote"
                   size={30}
                 />
 
+                {/* REVIEW */}
+
                 <p>
                   “{review.text}”
                 </p>
 
+                {/* PERSON */}
+
                 <div className="novaReviewCardPerson">
-                  <strong>{review.name}</strong>
-                  <span>{review.role}</span>
+
+                  <strong>
+                    {review.name}
+                  </strong>
+
+                  <span>
+                    {review.role}
+                  </span>
+
                 </div>
 
-                <div className="novaReviewCardLine"></div>
+                {/* VIEW STORY LINE */}
 
                 <span className="novaReviewCardView">
-                  View story
+
+                  <span>
+                    View story
+                  </span>
+
                   <ArrowUpRight size={15} />
+
                 </span>
 
               </article>
             ))}
 
           </div>
+
         </div>
+
       </section>
 
-      {/* ================= CTA ================= */}
+      {/* =====================================================
+          CTA
+      ===================================================== */}
 
       <section className="novaReviewsCTA">
+
         <div className="novaReviewsContainer">
 
           <div className="novaReviewsCTACard">
@@ -427,24 +540,17 @@ export default function Reviews() {
               </h2>
 
               <p>
-                Book a consultation with the NOVADENT team
-                and take the first step toward confident,
-                comfortable dental care.
+                Take the first step toward confident,
+                comfortable and personalized dental care
+                with the NOVADENT team.
               </p>
 
             </div>
 
-            <Link
-              to="/appointment"
-              className="novaReviewsCTAButton"
-            >
-              Book Appointment
-              <ArrowUpRight size={19} />
-            </Link>
-
           </div>
 
         </div>
+
       </section>
 
     </main>

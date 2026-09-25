@@ -24,11 +24,16 @@ export default function Contact() {
   return (
     <main className="novaContactPage">
 
-      {/* ================= HERO ================= */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section className="novaContactHero">
+
         <div className="contactHeroGlow"></div>
 
         <div className="contactContainer contactHeroGrid">
+
           <div className="contactHeroContent">
 
             <span className="contactEyebrow">
@@ -48,6 +53,7 @@ export default function Contact() {
             </p>
 
             <div className="contactHeroActions">
+
               <a
                 href="#contactForm"
                 className="contactPrimaryBtn"
@@ -63,20 +69,46 @@ export default function Contact() {
                 <Phone size={17} />
                 <span>+91 98765 43210</span>
               </a>
+
+            </div>
+
+            <div className="contactHeroTrust">
+
+              <div>
+                <CheckCircle size={16} />
+                <span>Quick Response</span>
+              </div>
+
+              <div>
+                <CheckCircle size={16} />
+                <span>Patient First</span>
+              </div>
+
+              <div>
+                <CheckCircle size={16} />
+                <span>Professional Care</span>
+              </div>
+
             </div>
 
           </div>
 
+
           <div className="contactHeroVisual">
 
             <div className="contactHeroImage">
+
               <img
                 src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=90"
-                alt="NOVADENT dental clinic"
+                alt="Modern NOVADENT dental clinic"
               />
+
+              <div className="contactHeroImageOverlay"></div>
+
             </div>
 
             <div className="contactHeroFloating">
+
               <div className="contactFloatingIcon">
                 <Sparkles size={19} />
               </div>
@@ -85,106 +117,176 @@ export default function Contact() {
                 <strong>We're here for you</strong>
                 <span>Mon – Sat · 9 AM – 6 PM</span>
               </div>
+
             </div>
 
           </div>
+
         </div>
+
       </section>
 
-      {/* ================= CONTACT DETAILS ================= */}
+
+      {/* =====================================================
+          CONTACT DETAILS
+      ===================================================== */}
+
       <section className="contactDetailsSection">
 
         <div className="contactContainer">
 
           <div className="contactSectionIntro">
+
             <div>
+
               <span className="contactOverline">
                 REACH NOVADENT
               </span>
 
-              <small>01 / CONTACT DETAILS</small>
+              <small>
+                01 / CONTACT DETAILS
+              </small>
 
               <h2>
                 We'd love to
                 <em> hear from you.</em>
               </h2>
+
             </div>
 
             <p>
-              Whether you are planning your first visit or
-              already part of the NOVADENT family, getting
-              in touch is simple.
+              Whether you are planning your first visit or already
+              part of the NOVADENT family, getting in touch is simple.
             </p>
+
           </div>
+
 
           <div className="contactInfoGrid">
 
             {/* PHONE */}
+
             <a
               href="tel:+919876543210"
               className="contactInfoCard"
             >
-              <span className="contactInfoNumber">01</span>
+
+              <span className="contactInfoNumber">
+                01
+              </span>
 
               <div className="contactInfoIcon">
                 <Phone size={22} />
               </div>
 
               <div className="contactInfoContent">
+
                 <span>CALL US</span>
-                <h3>+91 98765 43210</h3>
-                <p>Speak directly with our clinic team.</p>
+
+                <h3>
+                  +91 98765 43210
+                </h3>
+
+                <p>
+                  Speak directly with our clinic team.
+                </p>
+
               </div>
 
-              <ArrowUpRight className="contactInfoArrow" size={19} />
+              <ArrowUpRight
+                className="contactInfoArrow"
+                size={19}
+              />
+
             </a>
 
+
             {/* EMAIL */}
+
             <a
-              href="mailto:hello@novadent.com"
+              href="mailto:contact@novadent.com"
               className="contactInfoCard"
             >
-              <span className="contactInfoNumber">02</span>
+
+              <span className="contactInfoNumber">
+                02
+              </span>
 
               <div className="contactInfoIcon">
                 <Mail size={22} />
               </div>
 
               <div className="contactInfoContent">
+
                 <span>EMAIL US</span>
-                <h3>hello@novadent.com</h3>
-                <p>Send us your questions anytime.</p>
+
+                <h3>
+                  contact@novadent.com
+                </h3>
+
+                <p>
+                  Send us your questions anytime.
+                </p>
+
               </div>
 
-              <ArrowUpRight className="contactInfoArrow" size={19} />
+              <ArrowUpRight
+                className="contactInfoArrow"
+                size={19}
+              />
+
             </a>
 
+
             {/* LOCATION */}
-            <div className="contactInfoCard">
-              <span className="contactInfoNumber">03</span>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Pune%2C%20Maharashtra%2C%20India"
+              target="_blank"
+              rel="noreferrer"
+              className="contactInfoCard"
+            >
+
+              <span className="contactInfoNumber">
+                03
+              </span>
 
               <div className="contactInfoIcon">
                 <MapPin size={22} />
               </div>
 
               <div className="contactInfoContent">
+
                 <span>VISIT US</span>
-                <h3>Pune, Maharashtra</h3>
-                <p>Main Road, Pune, Maharashtra, India.</p>
+
+                <h3>
+                  Pune, Maharashtra
+                </h3>
+
+                <p>
+                  Main Road, Pune, Maharashtra, India.
+                </p>
+
               </div>
 
-              <MapPin
+              <ArrowUpRight
                 className="contactInfoArrow"
                 size={19}
               />
-            </div>
+
+            </a>
 
           </div>
 
         </div>
+
       </section>
 
-      {/* ================= FORM ================= */}
+
+      {/* =====================================================
+          ENQUIRY FORM
+      ===================================================== */}
+
       <section
         id="contactForm"
         className="contactFormSection"
@@ -193,11 +295,14 @@ export default function Contact() {
         <div className="contactContainer">
 
           <div className="contactFormHeader">
+
             <span className="contactOverline">
               SEND AN ENQUIRY
             </span>
 
-            <small>02 / LET'S CONNECT</small>
+            <small>
+              02 / LET'S CONNECT
+            </small>
 
             <h2>
               Tell us how
@@ -208,20 +313,27 @@ export default function Contact() {
               Fill in the form and our team will get back
               to you as soon as possible.
             </p>
+
           </div>
+
 
           <div className="contactFormLayout">
 
             {/* FORM */}
+
             <div className="contactFormCard">
 
               {!submitted ? (
+
                 <form onSubmit={handleSubmit}>
 
                   <div className="contactFormRow">
 
                     <div className="contactField">
-                      <label>Name</label>
+
+                      <label>
+                        Name
+                      </label>
 
                       <input
                         type="text"
@@ -229,10 +341,15 @@ export default function Contact() {
                         placeholder="Your full name"
                         required
                       />
+
                     </div>
 
+
                     <div className="contactField">
-                      <label>Email</label>
+
+                      <label>
+                        Email
+                      </label>
 
                       <input
                         type="email"
@@ -240,14 +357,19 @@ export default function Contact() {
                         placeholder="you@example.com"
                         required
                       />
+
                     </div>
 
                   </div>
 
+
                   <div className="contactFormRow">
 
                     <div className="contactField">
-                      <label>Phone</label>
+
+                      <label>
+                        Phone
+                      </label>
 
                       <input
                         type="tel"
@@ -255,10 +377,15 @@ export default function Contact() {
                         placeholder="+91 98765 43210"
                         required
                       />
+
                     </div>
 
+
                     <div className="contactField">
-                      <label>Subject</label>
+
+                      <label>
+                        Subject
+                      </label>
 
                       <input
                         type="text"
@@ -266,12 +393,17 @@ export default function Contact() {
                         placeholder="How can we help?"
                         required
                       />
+
                     </div>
 
                   </div>
 
+
                   <div className="contactField">
-                    <label>Message</label>
+
+                    <label>
+                      Message
+                    </label>
 
                     <textarea
                       name="message"
@@ -279,15 +411,23 @@ export default function Contact() {
                       placeholder="Write your message here..."
                       required
                     ></textarea>
+
                   </div>
+
 
                   <button
                     type="submit"
                     className="contactSubmitBtn"
                   >
-                    <span>Send Message</span>
+
+                    <span>
+                      Send Message
+                    </span>
+
                     <Send size={17} />
+
                   </button>
+
 
                   <p className="contactFormNote">
                     We respect your privacy and will only use
@@ -295,14 +435,18 @@ export default function Contact() {
                   </p>
 
                 </form>
+
               ) : (
+
                 <div className="contactSuccess">
 
                   <div className="contactSuccessIcon">
                     <CheckCircle size={42} />
                   </div>
 
-                  <span>MESSAGE SENT</span>
+                  <span>
+                    MESSAGE SENT
+                  </span>
 
                   <h3>
                     Thank you for reaching out!
@@ -323,18 +467,28 @@ export default function Contact() {
                   </button>
 
                 </div>
+
               )}
 
             </div>
 
+
             {/* SIDE PANEL */}
+
             <aside className="contactSidePanel">
+
+              {/* CLINIC HOURS */}
 
               <div className="contactSideCard">
 
                 <div className="contactSideTop">
+
                   <Clock3 size={21} />
-                  <span>CLINIC HOURS</span>
+
+                  <span>
+                    CLINIC HOURS
+                  </span>
+
                 </div>
 
                 <h3>
@@ -342,32 +496,55 @@ export default function Contact() {
                   <em> available.</em>
                 </h3>
 
+
                 <div className="contactHours">
 
                   <div>
-                    <span>Monday – Friday</span>
-                    <strong>9:00 AM – 6:00 PM</strong>
+                    <span>
+                      Monday – Friday
+                    </span>
+
+                    <strong>
+                      9:00 AM – 6:00 PM
+                    </strong>
                   </div>
 
-                  <div>
-                    <span>Saturday</span>
-                    <strong>9:00 AM – 4:00 PM</strong>
-                  </div>
 
                   <div>
-                    <span>Sunday</span>
-                    <strong>Closed</strong>
+                    <span>
+                      Saturday
+                    </span>
+
+                    <strong>
+                      9:00 AM – 4:00 PM
+                    </strong>
+                  </div>
+
+
+                  <div>
+                    <span>
+                      Sunday
+                    </span>
+
+                    <strong>
+                      Closed
+                    </strong>
                   </div>
 
                 </div>
 
               </div>
 
+
+              {/* APPOINTMENT */}
+
               <div className="contactSideCard contactAppointmentCard">
 
                 <CalendarDays size={25} />
 
-                <span>READY TO VISIT?</span>
+                <span>
+                  READY TO VISIT?
+                </span>
 
                 <h3>
                   Book your
@@ -389,17 +566,55 @@ export default function Contact() {
 
               </div>
 
+
+              {/* EMAIL */}
+
+              <div className="contactSideCard contactEmailCard">
+
+                <Mail size={24} />
+
+                <span>
+                  EMAIL NOVADENT
+                </span>
+
+                <h3>
+                  We're happy
+                  <em> to help.</em>
+                </h3>
+
+                <p>
+                  Have a question about treatments,
+                  appointments or dental care?
+                </p>
+
+                <a
+                  href="mailto:contact@novadent.com"
+                  className="contactSideEmail"
+                >
+                  contact@novadent.com
+                  <ArrowUpRight size={16} />
+                </a>
+
+              </div>
+
             </aside>
 
           </div>
 
         </div>
+
       </section>
 
-      {/* ================= MAP / LOCATION ================= */}
+
+      {/* =====================================================
+          LOCATION / MAP
+      ===================================================== */}
+
       <section className="contactLocationSection">
 
         <div className="contactContainer contactLocationGrid">
+
+          {/* LOCATION CONTENT */}
 
           <div className="contactLocationContent">
 
@@ -407,7 +622,9 @@ export default function Contact() {
               FIND US
             </span>
 
-            <small>03 / OUR LOCATION</small>
+            <small>
+              03 / OUR LOCATION
+            </small>
 
             <h2>
               Come visit
@@ -419,17 +636,60 @@ export default function Contact() {
               comfortable, welcoming and stress-free.
             </p>
 
+
             <div className="contactLocationAddress">
-              <MapPin size={20} />
+
+              <div className="locationAddressIcon">
+                <MapPin size={20} />
+              </div>
 
               <div>
-                <strong>NOVADENT Dental Care</strong>
+
+                <strong>
+                  NOVADENT Dental Care
+                </strong>
+
                 <span>
                   Main Road, Pune,
                   Maharashtra, India
                 </span>
+
               </div>
+
             </div>
+
+
+            <div className="contactLocationMeta">
+
+              <div>
+
+                <Clock3 size={17} />
+
+                <span>
+                  Mon – Sat
+                  <strong>
+                    9 AM – 6 PM
+                  </strong>
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <Phone size={17} />
+
+                <span>
+                  Call us
+                  <strong>
+                    +91 98765 43210
+                  </strong>
+                </span>
+
+              </div>
+
+            </div>
+
 
             <a
               href="https://www.google.com/maps/search/?api=1&query=Pune%2C%20Maharashtra%2C%20India"
@@ -443,21 +703,87 @@ export default function Contact() {
 
           </div>
 
+
+          {/* MAP */}
+
           <div className="contactMapVisual">
 
-            <div className="contactMapPattern">
-              <div className="mapGridLines"></div>
+            <div className="contactMapTopBar">
 
-              <div className="mapPinLarge">
-                <MapPin size={30} />
+              <div>
+
+                <span>
+                  NOVADENT LOCATION
+                </span>
+
+                <strong>
+                  Pune, Maharashtra
+                </strong>
+
               </div>
 
+              <MapPin size={21} />
+
+            </div>
+
+
+            <div className="contactMapCanvas">
+
+              <div className="mapGridLines"></div>
+
+              <div className="mapRoad roadOne"></div>
+              <div className="mapRoad roadTwo"></div>
+              <div className="mapRoad roadThree"></div>
+              <div className="mapRoad roadFour"></div>
+
+              <div className="mapArea areaOne">
+                Koregaon Park
+              </div>
+
+              <div className="mapArea areaTwo">
+                Central Pune
+              </div>
+
+              <div className="mapArea areaThree">
+                Main Road
+              </div>
+
+
+              <div className="mapPinLarge">
+
+                <span className="mapPulse"></span>
+
+                <div>
+                  <MapPin size={28} />
+                </div>
+
+              </div>
+
+
               <div className="mapLocationLabel">
-                <strong>NOVADENT</strong>
-                <span>Pune, Maharashtra</span>
+
+                <strong>
+                  NOVADENT
+                </strong>
+
+                <span>
+                  Dental Care · Pune
+                </span>
+
               </div>
 
             </div>
+
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Pune%2C%20Maharashtra%2C%20India"
+              target="_blank"
+              rel="noreferrer"
+              className="mapOpenButton"
+            >
+              Open Location
+              <ArrowUpRight size={16} />
+            </a>
 
           </div>
 
@@ -465,7 +791,12 @@ export default function Contact() {
 
       </section>
 
-      {/* ================= FINAL CTA ================= */}
+
+      {/* =====================================================
+          FINAL CTA
+          No duplicate Book Appointment here.
+      ===================================================== */}
+
       <section className="contactFinalCTA">
 
         <div className="contactContainer">
@@ -473,6 +804,7 @@ export default function Contact() {
           <div className="contactCTACard">
 
             <div>
+
               <span>
                 YOUR SMILE · OUR PRIORITY
               </span>
@@ -485,7 +817,9 @@ export default function Contact() {
               <p>
                 Our friendly dental team is ready to help.
               </p>
+
             </div>
+
 
             <div className="contactCTAActions">
 
@@ -497,13 +831,14 @@ export default function Contact() {
                 Call Clinic
               </a>
 
-              <Link
-                to="/appointment"
+
+              <a
+                href="mailto:contact@novadent.com"
                 className="contactCTAButton"
               >
-                Book Appointment
+                Email NOVADENT
                 <ArrowUpRight size={18} />
-              </Link>
+              </a>
 
             </div>
 

@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Stethoscope } from "lucide-react";
+import {
+  ArrowUpRight,
+  Stethoscope,
+  CalendarDays,
+  Sparkles,
+} from "lucide-react";
 
 export default function DoctorCard({
   name,
@@ -7,26 +12,34 @@ export default function DoctorCard({
   img,
 }) {
   return (
-    <article className="card doctor">
-
+    <article className="card doctor novaDoctorMiniCard">
       {/* Doctor Image */}
-      <div className="doctorImage">
-        <img src={img} alt={name} />
+      <div className="doctorImage novaDoctorMiniImage">
+        <img src={img} alt={name} loading="lazy" />
 
-        <div className="doctorOverlay">
+        <div className="doctorOverlay novaDoctorMiniOverlay">
           <span className="doctorBadge">
-            <Stethoscope size={16} />
+            <Stethoscope size={15} />
             Dental Expert
+          </span>
+
+          <span className="novaDoctorMiniSparkle">
+            <Sparkles size={15} />
           </span>
         </div>
       </div>
 
       {/* Doctor Details */}
-      <div className="cardbody doctorBody">
+      <div className="cardbody doctorBody novaDoctorMiniBody">
+        <div className="novaDoctorMiniTop">
+          <span className="doctorLabel">
+            PROFESSIONAL DENTIST
+          </span>
 
-        <span className="doctorLabel">
-          PROFESSIONAL DENTIST
-        </span>
+          <span className="novaDoctorMiniYears">
+            10+ YRS
+          </span>
+        </div>
 
         <h3>{name}</h3>
 
@@ -46,12 +59,15 @@ export default function DoctorCard({
 
         <Link
           to="/appointment"
-          className="doctorLink"
+          className="doctorLink novaDoctorMiniLink"
         >
-          <span>Book Consultation</span>
+          <span>
+            <CalendarDays size={16} />
+            Book Consultation
+          </span>
+
           <ArrowUpRight size={18} />
         </Link>
-
       </div>
     </article>
   );

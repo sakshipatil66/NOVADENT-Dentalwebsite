@@ -59,14 +59,35 @@ export default function Appointment() {
     setSubmitted(true);
   };
 
+  const handleNewAppointment = () => {
+    setSubmitted(false);
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      date: "",
+      time: "",
+      message: "",
+    });
+  };
+
   return (
     <main className="novaAppointmentPage">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section className="novaAppointmentHero">
+
         <div className="appointmentHeroGlow"></div>
 
         <div className="appointmentContainer appointmentHeroGrid">
+
+          {/* HERO CONTENT */}
+
           <div className="appointmentHeroContent">
 
             <span className="appointmentEyebrow">
@@ -85,18 +106,27 @@ export default function Appointment() {
             </p>
 
             <div className="appointmentHeroActions">
-              <a href="#appointmentForm" className="appointmentPrimaryBtn">
+
+              <a
+                href="#appointmentForm"
+                className="appointmentPrimaryBtn"
+              >
                 Book Your Visit
                 <ArrowUpRight size={18} />
               </a>
 
-              <a href="tel:+919876543210" className="appointmentPhoneBtn">
+              <a
+                href="tel:+919876543210"
+                className="appointmentPhoneBtn"
+              >
                 <Phone size={17} />
                 <span>+91 98765 43210</span>
               </a>
+
             </div>
 
             <div className="appointmentTrustRow">
+
               <div>
                 <CheckCircle size={17} />
                 <span>Easy Booking</span>
@@ -111,18 +141,28 @@ export default function Appointment() {
                 <Sparkles size={17} />
                 <span>Modern Care</span>
               </div>
+
             </div>
+
           </div>
 
+          {/* HERO IMAGE */}
+
           <div className="appointmentHeroVisual">
+
             <div className="appointmentHeroImage">
+
               <img
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=90"
-                alt="Modern dental clinic"
+                alt="Modern NOVADENT dental clinic"
               />
+
+              <div className="appointmentImageOverlay"></div>
+
             </div>
 
             <div className="appointmentFloatingCard">
+
               <div className="floatingIcon">
                 <CalendarDays size={20} />
               </div>
@@ -131,29 +171,42 @@ export default function Appointment() {
                 <strong>Flexible Scheduling</strong>
                 <span>Choose a convenient time</span>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
       <section className="appointmentIntro">
+
         <div className="appointmentContainer appointmentIntroGrid">
 
           <div>
+
             <span className="appointmentOverline">
               PLAN YOUR VISIT
             </span>
 
-            <small>01 / APPOINTMENT</small>
+            <small>
+              01 / APPOINTMENT
+            </small>
 
             <h2>
               Simple booking.
               <em> Comfortable care.</em>
             </h2>
+
           </div>
 
           <div className="appointmentIntroText">
+
             <p>
               Tell us a little about your dental needs and preferred
               appointment time. Our team will help you plan your visit.
@@ -162,66 +215,96 @@ export default function Appointment() {
             <div className="appointmentInfoCards">
 
               <div className="appointmentInfoCard">
+
                 <Clock3 size={20} />
+
                 <div>
                   <strong>Clinic Hours</strong>
                   <span>Mon – Sat · 9 AM – 6 PM</span>
                 </div>
+
               </div>
 
               <div className="appointmentInfoCard">
+
                 <MapPin size={20} />
+
                 <div>
                   <strong>Visit Us</strong>
                   <span>Pune, Maharashtra</span>
                 </div>
+
               </div>
 
             </div>
+
           </div>
 
         </div>
+
       </section>
 
-      {/* FORM */}
-      <section id="appointmentForm" className="appointmentFormSection">
+      {/* =====================================================
+          APPOINTMENT FORM
+      ===================================================== */}
+
+      <section
+        id="appointmentForm"
+        className="appointmentFormSection"
+      >
 
         <div className="appointmentContainer">
 
           <div className="appointmentSectionHeading">
+
             <div>
+
               <span className="appointmentOverline">
                 BOOK YOUR VISIT
               </span>
 
-              <small>02 / YOUR DETAILS</small>
+              <small>
+                02 / YOUR DETAILS
+              </small>
 
               <h2>
                 Let's plan your
                 <em> next visit.</em>
               </h2>
+
             </div>
 
             <p>
               Fill in the details below and our team will get in touch
               regarding your appointment.
             </p>
+
           </div>
 
           <div className="appointmentFormLayout">
 
-            {/* FORM */}
+            {/* =================================================
+                FORM CARD
+            ================================================= */}
+
             <div className="appointmentFormCard">
 
               {!submitted ? (
+
                 <form onSubmit={handleSubmit}>
+
+                  {/* NAME + PHONE */}
 
                   <div className="formRow">
 
                     <div className="formField">
-                      <label>Full Name</label>
+
+                      <label htmlFor="appointment-name">
+                        Full Name
+                      </label>
 
                       <input
+                        id="appointment-name"
                         type="text"
                         name="name"
                         placeholder="Enter your name"
@@ -229,12 +312,17 @@ export default function Appointment() {
                         onChange={handleChange}
                         required
                       />
+
                     </div>
 
                     <div className="formField">
-                      <label>Phone Number</label>
+
+                      <label htmlFor="appointment-phone">
+                        Phone Number
+                      </label>
 
                       <input
+                        id="appointment-phone"
                         type="tel"
                         name="phone"
                         placeholder="+91 98765 43210"
@@ -242,16 +330,23 @@ export default function Appointment() {
                         onChange={handleChange}
                         required
                       />
+
                     </div>
 
                   </div>
 
+                  {/* EMAIL + SERVICE */}
+
                   <div className="formRow">
 
                     <div className="formField">
-                      <label>Email Address</label>
+
+                      <label htmlFor="appointment-email">
+                        Email Address
+                      </label>
 
                       <input
+                        id="appointment-email"
                         type="email"
                         name="email"
                         placeholder="you@example.com"
@@ -259,86 +354,128 @@ export default function Appointment() {
                         onChange={handleChange}
                         required
                       />
+
                     </div>
 
                     <div className="formField">
-                      <label>Dental Service</label>
+
+                      <label htmlFor="appointment-service">
+                        Dental Service
+                      </label>
 
                       <select
+                        id="appointment-service"
                         name="service"
                         value={form.service}
                         onChange={handleChange}
                         required
                       >
+
                         <option value="">
                           Select a service
                         </option>
 
                         {services.map((service) => (
-                          <option key={service} value={service}>
+                          <option
+                            key={service}
+                            value={service}
+                          >
                             {service}
                           </option>
                         ))}
+
                       </select>
+
                     </div>
 
                   </div>
 
+                  {/* DATE + TIME */}
+
                   <div className="formRow">
 
                     <div className="formField">
-                      <label>Preferred Date</label>
+
+                      <label htmlFor="appointment-date">
+                        Preferred Date
+                      </label>
 
                       <input
+                        id="appointment-date"
                         type="date"
                         name="date"
                         value={form.date}
                         onChange={handleChange}
                         required
                       />
+
                     </div>
 
                     <div className="formField">
-                      <label>Preferred Time</label>
+
+                      <label htmlFor="appointment-time">
+                        Preferred Time
+                      </label>
 
                       <select
+                        id="appointment-time"
                         name="time"
                         value={form.time}
                         onChange={handleChange}
                         required
                       >
+
                         <option value="">
                           Select a time
                         </option>
 
                         {timeSlots.map((time) => (
-                          <option key={time} value={time}>
+                          <option
+                            key={time}
+                            value={time}
+                          >
                             {time}
                           </option>
                         ))}
+
                       </select>
+
                     </div>
 
                   </div>
 
+                  {/* MESSAGE */}
+
                   <div className="formField">
-                    <label>Message</label>
+
+                    <label htmlFor="appointment-message">
+                      Message
+                    </label>
 
                     <textarea
+                      id="appointment-message"
                       name="message"
                       rows="5"
                       placeholder="Tell us anything we should know..."
                       value={form.message}
                       onChange={handleChange}
                     ></textarea>
+
                   </div>
+
+                  {/* SUBMIT */}
 
                   <button
                     type="submit"
                     className="appointmentSubmitBtn"
                   >
-                    <span>Request Appointment</span>
+
+                    <span>
+                      Request Appointment
+                    </span>
+
                     <ArrowUpRight size={19} />
+
                   </button>
 
                   <p className="appointmentFormNote">
@@ -347,16 +484,22 @@ export default function Appointment() {
                   </p>
 
                 </form>
+
               ) : (
 
-                /* SUCCESS */
+                /* =================================================
+                   SUCCESS MESSAGE
+                ================================================= */
+
                 <div className="appointmentSuccess">
 
                   <div className="successIcon">
                     <CheckCircle size={42} />
                   </div>
 
-                  <span>REQUEST RECEIVED</span>
+                  <span>
+                    REQUEST RECEIVED
+                  </span>
 
                   <h3>
                     Thank you, {form.name || "there"}!
@@ -370,20 +513,26 @@ export default function Appointment() {
 
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={handleNewAppointment}
                     className="appointmentAgainBtn"
                   >
                     Book Another Appointment
-                    <ArrowRightIcon />
+                    <ArrowUpRight size={18} />
                   </button>
 
                 </div>
+
               )}
 
             </div>
 
-            {/* SIDE INFO */}
+            {/* =================================================
+                SIDE INFORMATION
+            ================================================= */}
+
             <aside className="appointmentSide">
+
+              {/* CARD 01 */}
 
               <div className="appointmentSideCard appointmentHighlight">
 
@@ -406,6 +555,8 @@ export default function Appointment() {
 
               </div>
 
+              {/* CARD 02 */}
+
               <div className="appointmentSideCard">
 
                 <span className="appointmentSideNumber">
@@ -414,7 +565,9 @@ export default function Appointment() {
 
                 <Phone size={24} />
 
-                <h3>Prefer to call?</h3>
+                <h3>
+                  Prefer to call?
+                </h3>
 
                 <p>
                   Our team is happy to help you schedule
@@ -422,11 +575,16 @@ export default function Appointment() {
                 </p>
 
                 <a href="tel:+919876543210">
+
                   +91 98765 43210
+
                   <ArrowUpRight size={16} />
+
                 </a>
 
               </div>
+
+              {/* CARD 03 */}
 
               <div className="appointmentSideCard">
 
@@ -436,7 +594,9 @@ export default function Appointment() {
 
                 <Mail size={24} />
 
-                <h3>Have a question?</h3>
+                <h3>
+                  Have a question?
+                </h3>
 
                 <p>
                   Send us an email and we'll help you
@@ -444,8 +604,11 @@ export default function Appointment() {
                 </p>
 
                 <a href="mailto:hello@novadent.com">
+
                   hello@novadent.com
+
                   <ArrowUpRight size={16} />
+
                 </a>
 
               </div>
@@ -453,10 +616,15 @@ export default function Appointment() {
             </aside>
 
           </div>
+
         </div>
+
       </section>
 
-      {/* FINAL CTA */}
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+
       <section className="appointmentFinalCTA">
 
         <div className="appointmentContainer">
@@ -464,6 +632,7 @@ export default function Appointment() {
           <div className="appointmentCTACard">
 
             <div>
+
               <span>
                 YOUR SMILE · OUR PRIORITY
               </span>
@@ -476,6 +645,7 @@ export default function Appointment() {
               <p>
                 Start with a consultation at NOVADENT.
               </p>
+
             </div>
 
             <Link
@@ -494,8 +664,4 @@ export default function Appointment() {
 
     </main>
   );
-}
-
-function ArrowRightIcon() {
-  return <ArrowUpRight size={18} />;
 }

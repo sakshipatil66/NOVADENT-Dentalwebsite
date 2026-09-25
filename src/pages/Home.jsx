@@ -18,9 +18,9 @@ import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import DoctorCard from "../components/DoctorCard";
 
-/* =========================================
+/* =========================================================
    HOME INTRO IMAGE SLIDER
-========================================= */
+========================================================= */
 
 const introImages = [
   "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=95",
@@ -28,9 +28,9 @@ const introImages = [
   "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1800&q=95",
 ];
 
-/* =========================================
+/* =========================================================
    SERVICES
-========================================= */
+========================================================= */
 
 const services = [
   {
@@ -59,9 +59,9 @@ const services = [
   },
 ];
 
-/* =========================================
+/* =========================================================
    DOCTORS
-========================================= */
+========================================================= */
 
 const doctors = [
   {
@@ -81,9 +81,9 @@ const doctors = [
   },
 ];
 
-/* =========================================
+/* =========================================================
    BENEFITS
-========================================= */
+========================================================= */
 
 const benefits = [
   {
@@ -112,9 +112,9 @@ const benefits = [
   },
 ];
 
-/* =========================================
+/* =========================================================
    TESTIMONIALS
-========================================= */
+========================================================= */
 
 const testimonials = [
   {
@@ -140,9 +140,9 @@ const testimonials = [
   },
 ];
 
-/* =========================================
+/* =========================================================
    ANIMATED COUNTER
-========================================= */
+========================================================= */
 
 function AnimatedCounter({ value, suffix = "" }) {
   const [count, setCount] = useState(0);
@@ -176,24 +176,23 @@ function AnimatedCounter({ value, suffix = "" }) {
   );
 }
 
-/* =========================================
+/* =========================================================
    HOME PAGE
-========================================= */
+========================================================= */
 
 export default function Home() {
-  const [activeBenefit, setActiveBenefit] = useState(0);
   const [activeReview, setActiveReview] = useState(0);
 
-  /* =========================================
+  /* =======================================================
      INTRO IMAGE SLIDER STATE
-  ========================================= */
+  ======================================================= */
 
   const [introImage, setIntroImage] = useState(0);
   const [introDirection, setIntroDirection] = useState("next");
 
-  /* =========================================
+  /* =======================================================
      INTRO IMAGE AUTO SLIDER
-  ========================================= */
+  ======================================================= */
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -207,9 +206,9 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  /* =========================================
+  /* =======================================================
      TESTIMONIAL AUTO SLIDER
-  ========================================= */
+  ======================================================= */
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -224,17 +223,19 @@ export default function Home() {
   return (
     <main className="homePage">
 
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ===================================================== */}
 
       <Hero />
 
-      {/* =========================================
+
+      {/* =====================================================
           WELCOME / ABOUT INTRO
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeIntro section">
+
         <div className="container homeIntroGrid">
 
           {/* IMAGE SLIDER */}
@@ -246,6 +247,7 @@ export default function Home() {
               <span>Modern • Gentle • Personal</span>
             </div>
 
+
             <div className="introImageSlider">
 
               {introImages.map((image, index) => (
@@ -253,7 +255,9 @@ export default function Home() {
                 <img
                   key={image}
                   src={image}
-                  alt="NOVADENT Dental Care"
+                  alt={`NOVADENT Dental Care ${
+                    index + 1
+                  }`}
                   className={`introSlide ${
                     index === introImage
                       ? "introSlideActive"
@@ -269,19 +273,30 @@ export default function Home() {
 
             </div>
 
+
             <div className="introImageOverlay"></div>
 
+
             <div className="introImageCard">
-              <strong>10+</strong>
-              <span>Years of Dental Excellence</span>
+
+              <strong>
+                10+
+              </strong>
+
+              <span>
+                Years of Dental Excellence
+              </span>
+
             </div>
 
-            {/* LEFT ARROW */}
+
+            {/* PREVIOUS */}
 
             <button
               type="button"
               className="introSliderArrow introSliderArrowLeft"
               onClick={() => {
+
                 setIntroDirection("prev");
 
                 setIntroImage(
@@ -289,32 +304,42 @@ export default function Home() {
                     (prev - 1 + introImages.length) %
                     introImages.length
                 );
+
               }}
               aria-label="Previous dental image"
             >
+
               <ArrowRight
                 size={20}
                 className="introArrowLeftIcon"
               />
+
             </button>
 
-            {/* RIGHT ARROW */}
+
+            {/* NEXT */}
 
             <button
               type="button"
               className="introSliderArrow introSliderArrowRight"
               onClick={() => {
+
                 setIntroDirection("next");
 
                 setIntroImage(
                   (prev) =>
-                    (prev + 1) % introImages.length
+                    (prev + 1) %
+                    introImages.length
                 );
+
               }}
               aria-label="Next dental image"
             >
+
               <ArrowRight size={20} />
+
             </button>
+
 
             {/* DOTS */}
 
@@ -326,9 +351,12 @@ export default function Home() {
                   key={index}
                   type="button"
                   className={
-                    index === introImage ? "active" : ""
+                    index === introImage
+                      ? "active"
+                      : ""
                   }
                   onClick={() => {
+
                     setIntroDirection(
                       index > introImage
                         ? "next"
@@ -336,8 +364,11 @@ export default function Home() {
                     );
 
                     setIntroImage(index);
+
                   }}
-                  aria-label={`Show dental image ${index + 1}`}
+                  aria-label={`Show dental image ${
+                    index + 1
+                  }`}
                 />
 
               ))}
@@ -346,7 +377,8 @@ export default function Home() {
 
           </div>
 
-          {/* CONTENT */}
+
+          {/* INTRO CONTENT */}
 
           <div className="homeIntroContent">
 
@@ -381,17 +413,20 @@ export default function Home() {
           </div>
 
         </div>
+
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           STATS
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeStats">
 
         <div className="statsGlow"></div>
 
         <div className="container homeStatsGrid">
+
 
           <div className="homeStat interactiveStat">
 
@@ -404,13 +439,16 @@ export default function Home() {
               suffix="+"
             />
 
-            <span>Years of Experience</span>
+            <span>
+              Years of Experience
+            </span>
 
             <small>
               Trusted dental expertise
             </small>
 
           </div>
+
 
           <div className="homeStat interactiveStat">
 
@@ -423,13 +461,16 @@ export default function Home() {
               suffix="+"
             />
 
-            <span>Smiles Transformed</span>
+            <span>
+              Smiles Transformed
+            </span>
 
             <small>
               Personalized patient care
             </small>
 
           </div>
+
 
           <div className="homeStat interactiveStat">
 
@@ -442,7 +483,9 @@ export default function Home() {
               suffix="+"
             />
 
-            <span>Dental Treatments</span>
+            <span>
+              Dental Treatments
+            </span>
 
             <small>
               Complete oral care
@@ -450,15 +493,20 @@ export default function Home() {
 
           </div>
 
+
           <div className="homeStat interactiveStat">
 
             <div className="statIcon">
               <Star size={21} />
             </div>
 
-            <strong>4.9</strong>
+            <strong>
+              4.9
+            </strong>
 
-            <span>Patient Rating</span>
+            <span>
+              Patient Rating
+            </span>
 
             <small>
               Based on sample reviews
@@ -470,9 +518,10 @@ export default function Home() {
 
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           TREATMENTS
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeServices section">
 
@@ -503,15 +552,22 @@ export default function Home() {
 
             </div>
 
+
             <Link
               to="/treatments"
               className="outlineButton animatedButton"
             >
-              <span>Explore Treatments</span>
+
+              <span>
+                Explore Treatments
+              </span>
+
               <ArrowRight size={18} />
+
             </Link>
 
           </div>
+
 
           <div className="serviceGrid premiumServiceGrid">
 
@@ -538,6 +594,7 @@ export default function Home() {
 
           </div>
 
+
           <div className="servicesBottomNote">
 
             <div className="noteIcon">
@@ -558,8 +615,11 @@ export default function Home() {
             </div>
 
             <Link to="/appointment">
+
               Book Consultation
+
               <ArrowUpRight size={16} />
+
             </Link>
 
           </div>
@@ -568,9 +628,10 @@ export default function Home() {
 
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           WHY NOVADENT
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeWhy section">
 
@@ -578,6 +639,9 @@ export default function Home() {
         <div className="homeWhyDecor homeWhyDecorTwo"></div>
 
         <div className="container homeWhyGrid">
+
+
+          {/* IMAGE */}
 
           <div className="homeWhyImage">
 
@@ -592,6 +656,7 @@ export default function Home() {
 
             <div className="imageShine"></div>
 
+
             <div className="homeWhyFloating">
 
               <div className="floatingIcon">
@@ -599,18 +664,36 @@ export default function Home() {
               </div>
 
               <div>
-                <strong>Comfort First</strong>
-                <span>Your care matters</span>
+
+                <strong>
+                  Comfort First
+                </strong>
+
+                <span>
+                  Your care matters
+                </span>
+
               </div>
 
             </div>
 
+
             <div className="floatingExperience">
-              <strong>10+</strong>
-              <span>Years</span>
+
+              <strong>
+                10+
+              </strong>
+
+              <span>
+                Years
+              </span>
+
             </div>
 
           </div>
+
+
+          {/* CONTENT */}
 
           <div className="homeWhyContent">
 
@@ -624,7 +707,10 @@ export default function Home() {
 
             <h2>
               More than dentistry.
-              <span> A better experience.</span>
+              <span>
+                {" "}
+                A better experience.
+              </span>
             </h2>
 
             <p className="homeWhyLead">
@@ -634,21 +720,15 @@ export default function Home() {
               designed.
             </p>
 
+
             <div className="interactiveBenefits">
 
-              {benefits.map((item, index) => (
+              {benefits.map((item) => (
 
                 <button
                   type="button"
                   key={item.title}
-                  className={`interactiveBenefit ${
-                    activeBenefit === index
-                      ? "active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setActiveBenefit(index)
-                  }
+                  className="interactiveBenefit"
                 >
 
                   <span className="benefitNumber">
@@ -682,12 +762,18 @@ export default function Home() {
 
             </div>
 
+
             <Link
               to="/about"
               className="primaryButton animatedButton"
             >
-              <span>Why Choose NOVADENT</span>
+
+              <span>
+                Why Choose NOVADENT
+              </span>
+
               <ArrowUpRight size={18} />
+
             </Link>
 
           </div>
@@ -696,9 +782,10 @@ export default function Home() {
 
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           DOCTORS
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeDoctors section">
 
@@ -718,7 +805,10 @@ export default function Home() {
 
               <h2>
                 Meet your
-                <span> dental care team.</span>
+                <span>
+                  {" "}
+                  dental care team.
+                </span>
               </h2>
 
               <p>
@@ -729,15 +819,22 @@ export default function Home() {
 
             </div>
 
+
             <Link
               to="/doctors"
               className="outlineButton animatedButton"
             >
-              <span>Meet Our Doctors</span>
+
+              <span>
+                Meet Our Doctors
+              </span>
+
               <ArrowRight size={18} />
+
             </Link>
 
           </div>
+
 
           <div className="doctorGrid premiumDoctorGrid">
 
@@ -767,9 +864,10 @@ export default function Home() {
 
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           SMILE BANNER
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeSmileBanner">
 
@@ -782,25 +880,37 @@ export default function Home() {
         <div className="homeSmileOverlay"></div>
         <div className="smileBannerGlow"></div>
 
+
         <div className="container homeSmileContent">
 
           <div className="bannerFloatingTag">
+
             <Sparkles size={15} />
 
             <span>
               A smile worth feeling confident about
             </span>
+
           </div>
+
 
           <span className="eyebrow lightEyebrow">
             YOUR SMILE. YOUR CONFIDENCE.
           </span>
 
+
           <h2 className="homeSmileTitle">
+
             Feel good. Smile freely.
+
             <br />
-            <span>Live confidently.</span>
+
+            <span>
+              Live confidently.
+            </span>
+
           </h2>
+
 
           <p>
             Because a healthy smile is not only about how
@@ -808,14 +918,20 @@ export default function Home() {
             speak and enjoy every moment.
           </p>
 
+
           <div className="bannerActions">
 
             <Link
               to="/treatments"
               className="lightButton animatedButton"
             >
-              <span>Explore Treatments</span>
+
+              <span>
+                Explore Treatments
+              </span>
+
               <ArrowRight size={18} />
+
             </Link>
 
           </div>
@@ -824,9 +940,10 @@ export default function Home() {
 
       </section>
 
-      {/* =========================================
+
+      {/* =====================================================
           TESTIMONIAL
-      ========================================= */}
+      ===================================================== */}
 
       <section className="homeTestimonial section">
 
@@ -846,6 +963,7 @@ export default function Home() {
 
             </div>
 
+
             <div className="testimonialRatingTop">
 
               <div className="stars">
@@ -864,21 +982,24 @@ export default function Home() {
 
           </div>
 
+
           <div className="testimonialBox">
 
             <div className="testimonialQuote">
               “
             </div>
 
+
             <div className="testimonialContent">
 
               <span className="testimonialSmall">
-                VERIFIED EXPERIENCE
+                PATIENT EXPERIENCE
               </span>
 
               <blockquote>
-                “{testimonials[activeReview].quote}”
+                {testimonials[activeReview].quote}
               </blockquote>
+
 
               <div className="testimonialAuthor">
 
@@ -902,23 +1023,30 @@ export default function Home() {
 
             </div>
 
+
+            {/* TESTIMONIAL CONTROLS */}
+
             <div className="testimonialControls">
 
               <button
                 type="button"
                 onClick={() =>
                   setActiveReview(
-                    (activeReview - 1 + testimonials.length) %
+                    (current) =>
+                      (current - 1 + testimonials.length) %
                       testimonials.length
                   )
                 }
                 aria-label="Previous review"
               >
+
                 <ArrowRight
                   size={18}
                   className="rotateLeft"
                 />
+
               </button>
+
 
               <div className="testimonialDots">
 
@@ -942,16 +1070,21 @@ export default function Home() {
 
               </div>
 
+
               <button
                 type="button"
                 onClick={() =>
                   setActiveReview(
-                    (activeReview + 1) % testimonials.length
+                    (current) =>
+                      (current + 1) %
+                      testimonials.length
                   )
                 }
                 aria-label="Next review"
               >
+
                 <ArrowRight size={18} />
+
               </button>
 
             </div>
@@ -961,11 +1094,6 @@ export default function Home() {
         </div>
 
       </section>
-
-      {/* =========================================
-          FINAL BOOK APPOINTMENT CTA
-          IS IN FOOTER
-      ========================================= */}
 
     </main>
   );

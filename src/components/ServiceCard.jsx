@@ -24,7 +24,7 @@ export default function ServiceCard({ title, text, img, icon = "✦" }) {
       <div className="serviceCardContent">
         <div className="serviceCardTop">
           <span className="serviceCardSmallTitle">
-            DENTAL CARE
+          TREATMENT
           </span>
 
           <span className="serviceCardCheck">

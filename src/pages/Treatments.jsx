@@ -511,24 +511,11 @@ export default function Treatments() {
             </p>
 
             <div className="ndtCTAButtons">
-
-              <Link
-                to="/appointment"
-                className="ndtLightButton"
-              >
-                Book an Appointment
-                <ArrowUpRight size={18} />
-              </Link>
-
-              <Link
-                to="/contact"
-                className="ndtCTASecondary"
-              >
-                Contact NOVADENT
-                <ArrowRight size={17} />
-              </Link>
-
-            </div>
+  <Link to="/contact" className="ndtCTASecondary">
+    Contact NOVADENT
+    <ArrowRight size={17} />
+  </Link>
+</div>
 
           </div>
 

@@ -22,12 +22,18 @@ export default function Footer() {
   return (
     <footer className="novaFooter">
 
-      {/* TOP CTA */}
+      {/* =====================================================
+          TOP CTA
+      ===================================================== */}
+
       <div className="novaFooterCTA">
+
         <div className="novaFooterContainer">
+
           <div className="novaFooterCTACard">
 
             <div className="novaFooterCTAText">
+
               <span className="novaFooterBadge">
                 <Sparkles size={14} />
                 YOUR SMILE · OUR CARE
@@ -42,7 +48,9 @@ export default function Footer() {
                 Take the first step toward comfortable,
                 modern and personalized dental care.
               </p>
+
             </div>
+
 
             <Link
               to="/appointment"
@@ -53,26 +61,43 @@ export default function Footer() {
             </Link>
 
           </div>
+
         </div>
+
       </div>
 
-      {/* MAIN FOOTER */}
+
+      {/* =====================================================
+          MAIN FOOTER
+      ===================================================== */}
+
       <div className="novaFooterMain">
 
         <div className="novaFooterContainer">
+
           <div className="novaFooterGrid">
 
-            {/* BRAND */}
+
+            {/* =================================================
+                BRAND
+            ================================================= */}
+
             <div className="novaFooterBrand">
 
-              <Link to="/" className="novaFooterLogo">
+              <Link
+                to="/"
+                className="novaFooterLogo"
+              >
 
                 <div className="novaFooterLogoIcon">
+
                   <svg
                     viewBox="0 0 64 64"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
+
                     <path
                       d="M18 8C12 8 8 13 8 20C8 28 13 34 14 42C15 50 17 56 22 56C27 56 27 47 32 47C37 47 37 56 42 56C47 56 49 50 50 42C51 34 56 28 56 20C56 13 52 8 46 8C40 8 37 12 32 12C27 12 24 8 18 8Z"
                       stroke="currentColor"
@@ -80,15 +105,26 @@ export default function Footer() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
+
                   </svg>
+
                 </div>
 
+
                 <div>
-                  <strong>NOVADENT</strong>
-                  <span>DENTAL CARE</span>
+
+                  <strong>
+                    NOVADENT
+                  </strong>
+
+                  <span>
+                    DENTAL CARE
+                  </span>
+
                 </div>
 
               </Link>
+
 
               <p>
                 Modern dentistry with a human touch.
@@ -96,27 +132,35 @@ export default function Footer() {
                 confident smiles for every patient.
               </p>
 
+
+              {/* CLICKABLE CONTACT ICONS */}
+
               <div className="novaFooterSocials">
 
                 <a
                   href="tel:+919876543210"
                   aria-label="Call NOVADENT"
+                  title="Call NOVADENT"
                 >
                   <Phone size={16} />
                 </a>
 
+
                 <a
-                  href="mailto:hello@novadent.com"
+                  href="mailto:contact@novadent.com"
                   aria-label="Email NOVADENT"
+                  title="Email NOVADENT"
                 >
                   <Mail size={16} />
                 </a>
+
 
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Pune%2C%20Maharashtra%2C%20India"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="NOVADENT location"
+                  aria-label="Open NOVADENT location in Google Maps"
+                  title="Open Google Maps"
                 >
                   <MapPin size={16} />
                 </a>
@@ -125,84 +169,150 @@ export default function Footer() {
 
             </div>
 
-            {/* QUICK LINKS */}
+
+            {/* =================================================
+                QUICK LINKS
+            ================================================= */}
+
             <div className="novaFooterColumn">
 
               <span className="novaFooterColumnTitle">
                 EXPLORE
               </span>
 
+
               <nav className="novaFooterLinks">
 
                 {footerLinks.map(([name, path]) => (
-                  <Link key={path} to={path}>
-                    <span>{name}</span>
+
+                  <Link
+                    key={path}
+                    to={path}
+                  >
+
+                    <span>
+                      {name}
+                    </span>
+
                     <ArrowUpRight size={14} />
+
                   </Link>
+
                 ))}
 
               </nav>
 
             </div>
 
-            {/* CONTACT */}
+
+            {/* =================================================
+                CONTACT
+            ================================================= */}
+
             <div className="novaFooterColumn">
 
               <span className="novaFooterColumnTitle">
                 CONTACT
               </span>
 
+
               <div className="novaFooterContactList">
 
-                <a href="tel:+919876543210">
+
+                {/* PHONE */}
+
+                <a
+                  href="tel:+919876543210"
+                  aria-label="Call NOVADENT"
+                >
 
                   <span className="novaFooterContactIcon">
                     <Phone size={15} />
                   </span>
 
                   <span>
-                    <small>CALL US</small>
-                    <strong>+91 98765 43210</strong>
+
+                    <small>
+                      CALL US
+                    </small>
+
+                    <strong>
+                      +91 98765 43210
+                    </strong>
+
                   </span>
 
                 </a>
 
-                <a href="mailto:hello@novadent.com">
+
+                {/* EMAIL */}
+
+                <a
+                  href="mailto:contact@novadent.com"
+                  aria-label="Email NOVADENT"
+                >
 
                   <span className="novaFooterContactIcon">
                     <Mail size={15} />
                   </span>
 
                   <span>
-                    <small>EMAIL</small>
-                    <strong>hello@novadent.com</strong>
+
+                    <small>
+                      EMAIL
+                    </small>
+
+                    <strong>
+                      contact@novadent.com
+                    </strong>
+
                   </span>
 
                 </a>
 
-                <div>
+
+                {/* LOCATION */}
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Pune%2C%20Maharashtra%2C%20India"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open NOVADENT location"
+                >
 
                   <span className="novaFooterContactIcon">
                     <MapPin size={15} />
                   </span>
 
                   <span>
-                    <small>LOCATION</small>
-                    <strong>Pune, Maharashtra</strong>
+
+                    <small>
+                      LOCATION
+                    </small>
+
+                    <strong>
+                      Pune, Maharashtra
+                    </strong>
+
                   </span>
 
-                </div>
+                </a>
 
               </div>
 
             </div>
 
-            {/* HOURS */}
+
+            {/* =================================================
+                CLINIC HOURS
+            ================================================= */}
+
             <div className="novaFooterColumn">
 
               <span className="novaFooterColumnTitle">
                 CLINIC HOURS
               </span>
+
 
               <div className="novaFooterHours">
 
@@ -210,21 +320,45 @@ export default function Footer() {
                   <Clock3 size={20} />
                 </div>
 
+
                 <div>
 
                   <div>
-                    <span>Mon – Fri</span>
-                    <strong>9:00 AM – 6:00 PM</strong>
+
+                    <span>
+                      Mon – Fri
+                    </span>
+
+                    <strong>
+                      9:00 AM – 6:00 PM
+                    </strong>
+
                   </div>
 
-                  <div>
-                    <span>Saturday</span>
-                    <strong>9:00 AM – 4:00 PM</strong>
-                  </div>
 
                   <div>
-                    <span>Sunday</span>
-                    <strong>Closed</strong>
+
+                    <span>
+                      Saturday
+                    </span>
+
+                    <strong>
+                      9:00 AM – 4:00 PM
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      Sunday
+                    </span>
+
+                    <strong>
+                      Closed
+                    </strong>
+
                   </div>
 
                 </div>
@@ -234,31 +368,50 @@ export default function Footer() {
             </div>
 
           </div>
+
         </div>
 
       </div>
 
-      {/* BOTTOM BAR */}
+
+      {/* =====================================================
+          BOTTOM BAR
+      ===================================================== */}
+
       <div className="novaFooterBottom">
 
         <div className="novaFooterContainer">
 
           <div className="novaFooterBottomInner">
 
+
             <p>
               © {new Date().getFullYear()} NOVADENT Dental Care.
               All rights reserved.
             </p>
 
+
             <div className="novaFooterBottomLinks">
-              <Link to="/contact">Privacy</Link>
+
+              <Link to="/contact">
+                Privacy
+              </Link>
+
               <span></span>
-              <Link to="/contact">Terms</Link>
+
+              <Link to="/contact">
+                Terms
+              </Link>
+
             </div>
 
+
             <p className="novaFooterMade">
+
               Designed for better smiles
+
               <Sparkles size={13} />
+
             </p>
 
           </div>

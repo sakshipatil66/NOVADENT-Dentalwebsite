@@ -217,28 +217,22 @@ function Gallery() {
 
       <section className="nova-gallery-cta">
         <div className="nova-gallery-container">
+<div className="nova-gallery-cta-box">
+  <div>
+    <small>YOUR SMILE JOURNEY</small>
 
-          <div className="nova-gallery-cta-box">
-            <div>
-              <small>YOUR SMILE JOURNEY</small>
+    <h2>
+      Ready for your
+      <br />
+      <i>next visit?</i>
+    </h2>
 
-              <h2>
-                Ready for your
-                <br />
-                <i>next visit?</i>
-              </h2>
-
-              <p>
-                Experience thoughtful dental care in a
-                modern environment designed around you.
-              </p>
-            </div>
-
-            <a href="/appointment">
-              Book an Appointment →
-            </a>
-          </div>
-
+    <p>
+      Experience thoughtful dental care in a
+      modern environment designed around you.
+    </p>
+  </div>
+</div>
         </div>
       </section>
 
