@@ -51209,3 +51209,710 @@ body {
     min-height: 165px;
   }
 }
+/* =========================================================
+   NOVADENT PREMIUM HERO SLIDER
+========================================================= */
+
+.novaHero {
+  position: relative;
+  min-height: 780px;
+  height: 88vh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #071d2b;
+}
+
+.heroSlides {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.heroSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.heroSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.08);
+}
+
+.heroSlide-current {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.heroSlide-current img {
+  animation: novaHeroZoom 4s ease forwards;
+}
+
+@keyframes novaHeroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.slide-next {
+  animation: heroSlideNext 0.9s ease both;
+}
+
+.slide-prev {
+  animation: heroSlidePrev 0.9s ease both;
+}
+
+@keyframes heroSlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroSlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 20, 31, 0.88) 0%,
+      rgba(3, 20, 31, 0.64) 38%,
+      rgba(3, 20, 31, 0.25) 70%,
+      rgba(3, 20, 31, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2),
+      transparent 40%,
+      rgba(0, 0, 0, 0.45)
+    );
+}
+
+.heroSoftGlow {
+  position: absolute;
+  z-index: 4;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.heroSoftGlowOne {
+  width: 280px;
+  height: 280px;
+  background: #31b7b5;
+  left: -100px;
+  top: 25%;
+}
+
+.heroSoftGlowTwo {
+  width: 220px;
+  height: 220px;
+  background: #8de7e3;
+  right: -100px;
+  bottom: 5%;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 6;
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+  min-height: 780px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  color: white;
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: #a9eeeb;
+}
+
+.heroEyebrowLine {
+  width: 45px;
+  height: 1px;
+  background: #79d8d4;
+}
+
+.heroTitle {
+  margin: 0;
+  max-width: 800px;
+  font-size: clamp(52px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.heroTitle span {
+  display: block;
+}
+
+.heroDescription {
+  max-width: 570px;
+  margin: 30px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.heroPrimaryBtn,
+.heroSecondaryBtn {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 0 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.heroPrimaryBtn {
+  background: #1e9d9b;
+  color: white;
+  border: 1px solid #1e9d9b;
+}
+
+.heroSecondaryBtn {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.heroPrimaryBtn:hover,
+.heroSecondaryBtn:hover {
+  transform: translateY(-3px);
+}
+
+.heroPrimaryBtn:hover {
+  background: #168582;
+}
+
+.heroSecondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.heroTrust {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.heroTrustItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.heroTrustItem strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.heroTrustItem span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.68);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heroTrustDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* HERO ARROWS */
+
+.heroArrow {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  background: rgba(5, 25, 36, 0.35);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.heroArrow:hover {
+  background: #1e9d9b;
+  border-color: #1e9d9b;
+}
+
+.heroArrowLeft {
+  left: 28px;
+}
+
+.heroArrowRight {
+  right: 28px;
+}
+
+.heroBottomControls {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: 35px;
+  transform: translateX(-50%);
+  width: min(1180px, calc(100% - 80px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroDots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heroDots button {
+  width: 30px;
+  height: 4px;
+  border: 0;
+  border-radius: 20px;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
+  transition: all 0.35s ease;
+}
+
+.heroDots button.active {
+  width: 60px;
+  background: #78d8d4;
+}
+
+.heroSlideNumber {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.heroSlideNumber i {
+  display: block;
+  width: 45px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   LEFT / RIGHT IMAGE SECTIONS
+========================================================= */
+
+/* HOME */
+
+.homeIntroGrid,
+.homeWhyGrid,
+.aboutIntroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 70px;
+}
+
+/* IMAGE LEFT */
+
+.homeIntroImage,
+.homeWhyImage,
+.aboutIntroImage {
+  grid-column: 1;
+}
+
+/* CONTENT RIGHT */
+
+.homeIntroContent,
+.homeWhyContent,
+.aboutIntroContent {
+  grid-column: 2;
+}
+
+/* =========================================================
+   ALTERNATING IMAGE POSITION
+========================================================= */
+
+/* Appointment - content left / image right */
+
+.appointmentHeroVisual {
+  order: 2;
+}
+
+.appointmentHeroContent {
+  order: 1;
+}
+
+/* Contact - content left / image right */
+
+.contactHeroVisual {
+  order: 2;
+}
+
+.contactHeroContent {
+  order: 1;
+}
+
+/* About - image left / content right */
+
+.aboutIntroImage {
+  order: 1;
+}
+
+.aboutIntroContent {
+  order: 2;
+}
+
+/* =========================================================
+   PREMIUM IMAGE HOVER
+========================================================= */
+
+.homeIntroImage,
+.homeWhyImage,
+.aboutIntroImage,
+.appointmentHeroVisual,
+.contactHeroVisual {
+  overflow: visible;
+}
+
+.homeIntroImage img,
+.homeWhyImage img,
+.aboutIntroImage img,
+.appointmentHeroImage img,
+.contactHeroImage img {
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.65s ease;
+}
+
+.homeIntroImage:hover img,
+.homeWhyImage:hover img,
+.aboutIntroImage:hover img,
+.appointmentHeroVisual:hover img,
+.contactHeroVisual:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.05);
+}
+
+/* =========================================================
+   DOCTORS / TREATMENTS IMAGE CARDS
+========================================================= */
+
+.serviceGrid,
+.doctorGrid {
+  align-items: stretch;
+}
+
+.serviceGrid > *,
+.doctorGrid > * {
+  transition:
+    transform 0.4s ease,
+    margin 0.4s ease;
+}
+
+.serviceGrid > *:hover,
+.doctorGrid > *:hover {
+  transform: translateY(-10px);
+}
+
+/* =========================================================
+   GALLERY IMAGE CARDS
+========================================================= */
+
+.nova-gallery-card {
+  overflow: hidden;
+}
+
+.nova-gallery-card img {
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.nova-gallery-card:hover img {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.testimonialBox {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.testimonialBox:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .novaHero {
+    min-height: 720px;
+    height: 820px;
+  }
+
+  .heroContent {
+    min-height: 720px;
+    width: min(100% - 40px, 700px);
+    padding-top: 80px;
+  }
+
+  .heroTitle {
+    font-size: clamp(48px, 10vw, 72px);
+  }
+
+  .heroArrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .heroArrowLeft {
+    left: 15px;
+  }
+
+  .heroArrowRight {
+    right: 15px;
+  }
+
+  .heroBottomControls {
+    width: calc(100% - 40px);
+  }
+
+  .homeIntroGrid,
+  .homeWhyGrid,
+  .aboutIntroGrid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .homeIntroImage,
+  .homeWhyImage,
+  .aboutIntroImage,
+  .homeIntroContent,
+  .homeWhyContent,
+  .aboutIntroContent {
+    grid-column: auto;
+  }
+
+  .homeIntroImage,
+  .homeWhyImage,
+  .aboutIntroImage {
+    order: 1;
+  }
+
+  .homeIntroContent,
+  .homeWhyContent,
+  .aboutIntroContent {
+    order: 2;
+  }
+
+  .appointmentHeroVisual,
+  .contactHeroVisual {
+    order: 1;
+  }
+
+  .appointmentHeroContent,
+  .contactHeroContent {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .novaHero {
+    min-height: 700px;
+    height: 760px;
+  }
+
+  .heroOverlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 20, 31, 0.38),
+        rgba(3, 20, 31, 0.86)
+      );
+  }
+
+  .heroContent {
+    width: calc(100% - 34px);
+    min-height: 700px;
+    justify-content: flex-end;
+    padding-bottom: 105px;
+  }
+
+  .heroEyebrow {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+
+  .heroEyebrowLine {
+    width: 25px;
+  }
+
+  .heroTitle {
+    font-size: clamp(42px, 13vw, 62px);
+  }
+
+  .heroDescription {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 22px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .heroPrimaryBtn,
+  .heroSecondaryBtn {
+    width: 100%;
+  }
+
+  .heroTrust {
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .heroTrustDivider {
+    height: 30px;
+  }
+
+  .heroTrustItem strong {
+    font-size: 18px;
+  }
+
+  .heroTrustItem span {
+    font-size: 8px;
+  }
+
+  .heroArrow {
+    top: 48%;
+    width: 42px;
+    height: 42px;
+  }
+
+  .heroArrowLeft {
+    left: 10px;
+  }
+
+  .heroArrowRight {
+    right: 10px;
+  }
+
+  .heroBottomControls {
+    bottom: 22px;
+    width: calc(100% - 34px);
+  }
+
+  .heroSlideNumber {
+    font-size: 10px;
+  }
+
+  .heroSlideNumber i {
+    width: 25px;
+  }
+
+  .heroDots button {
+    width: 20px;
+  }
+
+  .heroDots button.active {
+    width: 40px;
+  }
+
+  .homeIntroGrid,
+  .homeWhyGrid,
+  .aboutIntroGrid {
+    gap: 30px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .heroSlide-current img,
+  .slide-next,
+  .slide-prev {
+    animation: none;
+  }
+
+  .heroPrimaryBtn,
+  .heroSecondaryBtn,
+  .heroArrow,
+  .nova-gallery-card img {
+    transition: none;
+  }
+}

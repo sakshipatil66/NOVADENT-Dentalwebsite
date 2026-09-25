@@ -34,17 +34,14 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState("next");
-  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = () => {
     setDirection("next");
-
     setCurrent((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
     setDirection("prev");
-
     setCurrent(
       (prev) => (prev - 1 + slides.length) % slides.length
     );
@@ -52,68 +49,57 @@ export default function Hero() {
 
   /* =========================================
      AUTO SLIDER
-  ========================================= */
+     ========================================= */
 
   useEffect(() => {
-    if (isPaused) return;
-
     const timer = setInterval(() => {
       setDirection("next");
 
-      setCurrent(
-        (prev) => (prev + 1) % slides.length
-      );
-    }, 5000);
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 4000);
 
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, []);
 
   /* =========================================
-     KEYBOARD CONTROLS
-  ========================================= */
+     KEYBOARD
+     ========================================= */
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowLeft") {
-        prevSlide();
+        setDirection("prev");
+
+        setCurrent(
+          (prev) => (prev - 1 + slides.length) % slides.length
+        );
       }
 
       if (event.key === "ArrowRight") {
-        nextSlide();
+        setDirection("next");
+
+        setCurrent((prev) => (prev + 1) % slides.length);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
   return (
-    <section
-      className="novaHero"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="novaHero">
 
-      {/* =========================================
-          BACKGROUND SLIDES
-      ========================================= */}
+      {/* BACKGROUND SLIDES */}
 
       <div className="heroSlides">
-
         {slides.map((slide, index) => (
-
           <div
             key={slide.image}
             className={`heroSlide ${
-              index === current
-                ? "heroSlide-current"
-                : ""
+              index === current ? "heroSlide-current" : ""
             } ${
               index === current
                 ? direction === "next"
@@ -122,38 +108,27 @@ export default function Hero() {
                 : ""
             }`}
           >
-
             <img
               src={slide.image}
               alt="NOVADENT Dental Care"
               loading={index === 0 ? "eager" : "lazy"}
             />
-
           </div>
-
         ))}
-
       </div>
 
-      {/* =========================================
-          LIGHT PREMIUM OVERLAY
-      ========================================= */}
+      {/* OVERLAY */}
 
       <div className="heroOverlay"></div>
 
       <div className="heroSoftGlow heroSoftGlowOne"></div>
       <div className="heroSoftGlow heroSoftGlowTwo"></div>
 
-      {/* =========================================
-          HERO CONTENT
-      ========================================= */}
+      {/* CONTENT */}
 
       <div className="heroContent">
 
-        {/* EYEBROW */}
-
         <div className="heroEyebrow">
-
           <span className="heroEyebrowLine"></span>
 
           <span>
@@ -161,32 +136,19 @@ export default function Hero() {
           </span>
 
           <span className="heroEyebrowLine"></span>
-
         </div>
 
-        {/* TITLE */}
-
         <h1 className="heroTitle">
-
           {slides[current].title
             .split("\n")
             .map((line, index) => (
-
-              <span key={index}>
-                {line}
-              </span>
-
+              <span key={index}>{line}</span>
             ))}
-
         </h1>
-
-        {/* DESCRIPTION */}
 
         <p className="heroDescription">
           {slides[current].text}
         </p>
-
-        {/* ACTIONS */}
 
         <div className="heroActions">
 
@@ -194,7 +156,6 @@ export default function Hero() {
             to="/appointment"
             className="heroPrimaryBtn"
           >
-
             <CalendarDays size={18} />
 
             <span>
@@ -202,7 +163,6 @@ export default function Hero() {
             </span>
 
             <ChevronRight size={17} />
-
           </Link>
 
           <Link
@@ -214,64 +174,38 @@ export default function Hero() {
             </span>
 
             <ArrowRight size={17} />
-
           </Link>
 
         </div>
 
-        {/* =========================================
-            TRUST STATS
-        ========================================= */}
+        {/* TRUST */}
 
         <div className="heroTrust">
 
           <div className="heroTrustItem">
-
-            <strong>
-              10+
-            </strong>
-
-            <span>
-              Years Experience
-            </span>
-
+            <strong>10+</strong>
+            <span>Years Experience</span>
           </div>
 
           <div className="heroTrustDivider"></div>
 
           <div className="heroTrustItem">
-
-            <strong>
-              15K+
-            </strong>
-
-            <span>
-              Happy Patients
-            </span>
-
+            <strong>15K+</strong>
+            <span>Happy Patients</span>
           </div>
 
           <div className="heroTrustDivider"></div>
 
           <div className="heroTrustItem">
-
-            <strong>
-              4.9
-            </strong>
-
-            <span>
-              Patient Rating
-            </span>
-
+            <strong>4.9</strong>
+            <span>Patient Rating</span>
           </div>
 
         </div>
 
       </div>
 
-      {/* =========================================
-          LEFT ARROW
-      ========================================= */}
+      {/* LEFT */}
 
       <button
         type="button"
@@ -279,14 +213,10 @@ export default function Hero() {
         onClick={prevSlide}
         aria-label="Previous slide"
       >
-
         <ArrowLeft size={21} />
-
       </button>
 
-      {/* =========================================
-          RIGHT ARROW
-      ========================================= */}
+      {/* RIGHT */}
 
       <button
         type="button"
@@ -294,63 +224,37 @@ export default function Hero() {
         onClick={nextSlide}
         aria-label="Next slide"
       >
-
         <ArrowRight size={21} />
-
       </button>
 
-      {/* =========================================
-          BOTTOM CONTROLS
-      ========================================= */}
+      {/* BOTTOM */}
 
       <div className="heroBottomControls">
 
-        {/* DOTS */}
-
         <div className="heroDots">
-
           {slides.map((_, index) => (
-
             <button
               key={index}
               type="button"
               className={
-                index === current
-                  ? "active"
-                  : ""
+                index === current ? "active" : ""
               }
               onClick={() => {
-
                 setDirection(
-                  index > current
-                    ? "next"
-                    : "prev"
+                  index > current ? "next" : "prev"
                 );
 
                 setCurrent(index);
-
               }}
               aria-label={`Go to slide ${index + 1}`}
             />
-
           ))}
-
         </div>
 
-        {/* SLIDE NUMBER */}
-
         <div className="heroSlideNumber">
-
-          <span>
-            0{current + 1}
-          </span>
-
+          <span>0{current + 1}</span>
           <i></i>
-
-          <span>
-            0{slides.length}
-          </span>
-
+          <span>0{slides.length}</span>
         </div>
 
       </div>
