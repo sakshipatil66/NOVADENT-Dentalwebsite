@@ -6489,32 +6489,40 @@ textarea::placeholder {
 
 .novaMenuButton {
   display: none;
-
   width: 46px;
   height: 46px;
-
   align-items: center;
   justify-content: center;
-
   border: 1px solid var(--border);
   border-radius: 14px;
-
   color: var(--ink);
   background: white;
-
   cursor: pointer;
-
-  transition:
-    .3s ease;
+  transition: .3s ease;
 }
 
 .novaMenuButton:hover {
   color: white;
   background: var(--primary);
-
   transform: translateY(-2px);
 }
 
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .novaMenuButton {
+    display: flex;
+  }
+
+  .novaDesktopCTA {
+    display: none;
+  }
+
+}
 /* =========================================================
    MOBILE CTA
 ========================================================= */
@@ -74726,4 +74734,164 @@ main > section:first-child + section {
   max-width: 650px;
   margin: 25px auto 0;
   text-align: center;
+}/* =========================================================
+   NOVADENT MOBILE NAVIGATION
+========================================================= */
+
+.novaMenuButton {
+  display: none;
+}
+
+.novaMobileBar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .novaNavbar {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .novaNavbarInner {
+    width: 100%;
+    padding: 10px 16px;
+    box-sizing: border-box;
+  }
+
+  /* Desktop appointment hide */
+  .novaDesktopCTA {
+    display: none !important;
+  }
+
+  /* Hamburger show */
+  .novaMenuButton {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    padding: 0;
+    border: 1px solid #d9e3ea;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #0b2545;
+    cursor: pointer;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .novaMenuButton svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Closed menu */
+  .novaNavigation {
+    display: none !important;
+  }
+
+  /* Open menu */
+  .novaNavigation.isOpen {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    right: 12px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(11, 37, 69, 0.18);
+    z-index: 9998;
+  }
+
+  .novaNavigation.isOpen .novaNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .novaNavigation.isOpen .novaNavLink {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .novaNavigation.isOpen .novaNavLink.isActive {
+    background: #eef7f7;
+  }
+
+  .novaNavigation.isOpen .novaMobileAppointment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding: 13px 14px;
+    border-radius: 12px;
+    background: #0b2545;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  /* Overlay */
+  .novaMenuOverlay {
+    position: fixed;
+    inset: 0;
+    border: 0;
+    background: rgba(11, 37, 69, 0.2);
+    z-index: 9997;
+  }
+
+  /* Bottom navigation */
+  .novaMobileBar {
+    display: flex !important;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9996;
+    align-items: center;
+    justify-content: space-around;
+    padding: 9px 6px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(11, 37, 69, 0.18);
+  }
+
+  .novaMobileBar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: #0b2545;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .novaBarDivider {
+    width: 1px;
+    height: 24px;
+    background: #d9e3ea;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP / TABLET
+========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .novaMenuButton {
+    display: none !important;
+  }
+
+  .novaMobileBar {
+    display: none !important;
+  }
 }
