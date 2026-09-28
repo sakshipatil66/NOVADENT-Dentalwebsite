@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -12,6 +11,7 @@ import {
   CalendarDays,
   Sparkles,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,10 @@ export default function Contact() {
           HERO
       ===================================================== */}
 
-      <section className="novaContactHero">
+      <section
+        className="novaContactHero"
+        aria-labelledby="contact-hero-title"
+      >
 
         <div className="contactHeroGlow"></div>
 
@@ -37,11 +40,11 @@ export default function Contact() {
           <div className="contactHeroContent">
 
             <span className="contactEyebrow">
-              <MessageSquare size={15} />
+              <MessageSquare size={15} aria-hidden="true" />
               NOVADENT · GET IN TOUCH
             </span>
 
-            <h1>
+            <h1 id="contact-hero-title">
               Let's talk about
               <em> your smile.</em>
             </h1>
@@ -52,40 +55,25 @@ export default function Contact() {
               Our team is here to help.
             </p>
 
-            <div className="contactHeroActions">
+            {/* Hero buttons removed as requested */}
 
-              <a
-                href="#contactForm"
-                className="contactPrimaryBtn"
-              >
-                Send an Enquiry
-                <ArrowUpRight size={18} />
-              </a>
-
-              <a
-                href="tel:+919876543210"
-                className="contactPhoneLink"
-              >
-                <Phone size={17} />
-                <span>+91 98765 43210</span>
-              </a>
-
-            </div>
-
-            <div className="contactHeroTrust">
+            <div
+              className="contactHeroTrust"
+              aria-label="NOVADENT contact benefits"
+            >
 
               <div>
-                <CheckCircle size={16} />
+                <CheckCircle size={16} aria-hidden="true" />
                 <span>Quick Response</span>
               </div>
 
               <div>
-                <CheckCircle size={16} />
+                <CheckCircle size={16} aria-hidden="true" />
                 <span>Patient First</span>
               </div>
 
               <div>
-                <CheckCircle size={16} />
+                <CheckCircle size={16} aria-hidden="true" />
                 <span>Professional Care</span>
               </div>
 
@@ -93,6 +81,8 @@ export default function Contact() {
 
           </div>
 
+
+          {/* HERO IMAGE */}
 
           <div className="contactHeroVisual">
 
@@ -110,7 +100,7 @@ export default function Contact() {
             <div className="contactHeroFloating">
 
               <div className="contactFloatingIcon">
-                <Sparkles size={19} />
+                <Sparkles size={19} aria-hidden="true" />
               </div>
 
               <div>
@@ -131,7 +121,10 @@ export default function Contact() {
           CONTACT DETAILS
       ===================================================== */}
 
-      <section className="contactDetailsSection">
+      <section
+        className="contactDetailsSection"
+        aria-labelledby="contact-details-title"
+      >
 
         <div className="contactContainer">
 
@@ -147,7 +140,7 @@ export default function Contact() {
                 01 / CONTACT DETAILS
               </small>
 
-              <h2>
+              <h2 id="contact-details-title">
                 We'd love to
                 <em> hear from you.</em>
               </h2>
@@ -169,6 +162,7 @@ export default function Contact() {
             <a
               href="tel:+919876543210"
               className="contactInfoCard"
+              aria-label="Call NOVADENT at plus 91 98765 43210"
             >
 
               <span className="contactInfoNumber">
@@ -176,7 +170,7 @@ export default function Contact() {
               </span>
 
               <div className="contactInfoIcon">
-                <Phone size={22} />
+                <Phone size={22} aria-hidden="true" />
               </div>
 
               <div className="contactInfoContent">
@@ -196,6 +190,7 @@ export default function Contact() {
               <ArrowUpRight
                 className="contactInfoArrow"
                 size={19}
+                aria-hidden="true"
               />
 
             </a>
@@ -206,6 +201,7 @@ export default function Contact() {
             <a
               href="mailto:contact@novadent.com"
               className="contactInfoCard"
+              aria-label="Email NOVADENT"
             >
 
               <span className="contactInfoNumber">
@@ -213,7 +209,7 @@ export default function Contact() {
               </span>
 
               <div className="contactInfoIcon">
-                <Mail size={22} />
+                <Mail size={22} aria-hidden="true" />
               </div>
 
               <div className="contactInfoContent">
@@ -233,6 +229,7 @@ export default function Contact() {
               <ArrowUpRight
                 className="contactInfoArrow"
                 size={19}
+                aria-hidden="true"
               />
 
             </a>
@@ -245,6 +242,7 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
               className="contactInfoCard"
+              aria-label="View NOVADENT location in Pune on Google Maps"
             >
 
               <span className="contactInfoNumber">
@@ -252,7 +250,7 @@ export default function Contact() {
               </span>
 
               <div className="contactInfoIcon">
-                <MapPin size={22} />
+                <MapPin size={22} aria-hidden="true" />
               </div>
 
               <div className="contactInfoContent">
@@ -272,6 +270,7 @@ export default function Contact() {
               <ArrowUpRight
                 className="contactInfoArrow"
                 size={19}
+                aria-hidden="true"
               />
 
             </a>
@@ -290,6 +289,7 @@ export default function Contact() {
       <section
         id="contactForm"
         className="contactFormSection"
+        aria-labelledby="contact-form-title"
       >
 
         <div className="contactContainer">
@@ -304,7 +304,7 @@ export default function Contact() {
               02 / LET'S CONNECT
             </small>
 
-            <h2>
+            <h2 id="contact-form-title">
               Tell us how
               <em> we can help.</em>
             </h2>
@@ -331,11 +331,12 @@ export default function Contact() {
 
                     <div className="contactField">
 
-                      <label>
+                      <label htmlFor="contact-name">
                         Name
                       </label>
 
                       <input
+                        id="contact-name"
                         type="text"
                         name="name"
                         placeholder="Your full name"
@@ -347,11 +348,12 @@ export default function Contact() {
 
                     <div className="contactField">
 
-                      <label>
+                      <label htmlFor="contact-email">
                         Email
                       </label>
 
                       <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         placeholder="you@example.com"
@@ -367,11 +369,12 @@ export default function Contact() {
 
                     <div className="contactField">
 
-                      <label>
+                      <label htmlFor="contact-phone">
                         Phone
                       </label>
 
                       <input
+                        id="contact-phone"
                         type="tel"
                         name="phone"
                         placeholder="+91 98765 43210"
@@ -383,11 +386,12 @@ export default function Contact() {
 
                     <div className="contactField">
 
-                      <label>
+                      <label htmlFor="contact-subject">
                         Subject
                       </label>
 
                       <input
+                        id="contact-subject"
                         type="text"
                         name="subject"
                         placeholder="How can we help?"
@@ -401,11 +405,12 @@ export default function Contact() {
 
                   <div className="contactField">
 
-                    <label>
+                    <label htmlFor="contact-message">
                       Message
                     </label>
 
                     <textarea
+                      id="contact-message"
                       name="message"
                       rows="6"
                       placeholder="Write your message here..."
@@ -424,7 +429,10 @@ export default function Contact() {
                       Send Message
                     </span>
 
-                    <Send size={17} />
+                    <Send
+                      size={17}
+                      aria-hidden="true"
+                    />
 
                   </button>
 
@@ -441,7 +449,10 @@ export default function Contact() {
                 <div className="contactSuccess">
 
                   <div className="contactSuccessIcon">
-                    <CheckCircle size={42} />
+                    <CheckCircle
+                      size={42}
+                      aria-hidden="true"
+                    />
                   </div>
 
                   <span>
@@ -463,7 +474,11 @@ export default function Contact() {
                     className="contactAgainBtn"
                   >
                     Send Another Message
-                    <ArrowUpRight size={17} />
+
+                    <ArrowUpRight
+                      size={17}
+                      aria-hidden="true"
+                    />
                   </button>
 
                 </div>
@@ -483,7 +498,10 @@ export default function Contact() {
 
                 <div className="contactSideTop">
 
-                  <Clock3 size={21} />
+                  <Clock3
+                    size={21}
+                    aria-hidden="true"
+                  />
 
                   <span>
                     CLINIC HOURS
@@ -540,7 +558,10 @@ export default function Contact() {
 
               <div className="contactSideCard contactAppointmentCard">
 
-                <CalendarDays size={25} />
+                <CalendarDays
+                  size={25}
+                  aria-hidden="true"
+                />
 
                 <span>
                   READY TO VISIT?
@@ -559,9 +580,14 @@ export default function Contact() {
                 <Link
                   to="/appointment"
                   className="contactAppointmentBtn"
+                  aria-label="Book a NOVADENT appointment"
                 >
                   Book Appointment
-                  <ArrowUpRight size={17} />
+
+                  <ArrowUpRight
+                    size={17}
+                    aria-hidden="true"
+                  />
                 </Link>
 
               </div>
@@ -571,7 +597,10 @@ export default function Contact() {
 
               <div className="contactSideCard contactEmailCard">
 
-                <Mail size={24} />
+                <Mail
+                  size={24}
+                  aria-hidden="true"
+                />
 
                 <span>
                   EMAIL NOVADENT
@@ -590,9 +619,14 @@ export default function Contact() {
                 <a
                   href="mailto:contact@novadent.com"
                   className="contactSideEmail"
+                  aria-label="Email NOVADENT"
                 >
                   contact@novadent.com
-                  <ArrowUpRight size={16} />
+
+                  <ArrowUpRight
+                    size={16}
+                    aria-hidden="true"
+                  />
                 </a>
 
               </div>
@@ -610,7 +644,10 @@ export default function Contact() {
           LOCATION / MAP
       ===================================================== */}
 
-      <section className="contactLocationSection">
+      <section
+        className="contactLocationSection"
+        aria-labelledby="location-title"
+      >
 
         <div className="contactContainer contactLocationGrid">
 
@@ -626,7 +663,7 @@ export default function Contact() {
               03 / OUR LOCATION
             </small>
 
-            <h2>
+            <h2 id="location-title">
               Come visit
               <em> NOVADENT.</em>
             </h2>
@@ -640,7 +677,7 @@ export default function Contact() {
             <div className="contactLocationAddress">
 
               <div className="locationAddressIcon">
-                <MapPin size={20} />
+                <MapPin size={20} aria-hidden="true" />
               </div>
 
               <div>
@@ -663,7 +700,7 @@ export default function Contact() {
 
               <div>
 
-                <Clock3 size={17} />
+                <Clock3 size={17} aria-hidden="true" />
 
                 <span>
                   Mon – Sat
@@ -677,7 +714,7 @@ export default function Contact() {
 
               <div>
 
-                <Phone size={17} />
+                <Phone size={17} aria-hidden="true" />
 
                 <span>
                   Call us
@@ -698,7 +735,11 @@ export default function Contact() {
               className="contactMapLink"
             >
               Open in Google Maps
-              <ArrowUpRight size={17} />
+
+              <ArrowUpRight
+                size={17}
+                aria-hidden="true"
+              />
             </a>
 
           </div>
@@ -722,7 +763,10 @@ export default function Contact() {
 
               </div>
 
-              <MapPin size={21} />
+              <MapPin
+                size={21}
+                aria-hidden="true"
+              />
 
             </div>
 
@@ -754,7 +798,10 @@ export default function Contact() {
                 <span className="mapPulse"></span>
 
                 <div>
-                  <MapPin size={28} />
+                  <MapPin
+                    size={28}
+                    aria-hidden="true"
+                  />
                 </div>
 
               </div>
@@ -782,7 +829,11 @@ export default function Contact() {
               className="mapOpenButton"
             >
               Open Location
-              <ArrowUpRight size={16} />
+
+              <ArrowUpRight
+                size={16}
+                aria-hidden="true"
+              />
             </a>
 
           </div>
@@ -794,10 +845,12 @@ export default function Contact() {
 
       {/* =====================================================
           FINAL CTA
-          No duplicate Book Appointment here.
       ===================================================== */}
 
-      <section className="contactFinalCTA">
+      <section
+        className="contactFinalCTA"
+        aria-labelledby="contact-cta-title"
+      >
 
         <div className="contactContainer">
 
@@ -809,7 +862,7 @@ export default function Contact() {
                 YOUR SMILE · OUR PRIORITY
               </span>
 
-              <h2>
+              <h2 id="contact-cta-title">
                 Have a question?
                 <em> Let's talk.</em>
               </h2>
@@ -826,8 +879,12 @@ export default function Contact() {
               <a
                 href="tel:+919876543210"
                 className="contactCTASecondary"
+                aria-label="Call NOVADENT clinic"
               >
-                <Phone size={17} />
+                <Phone
+                  size={17}
+                  aria-hidden="true"
+                />
                 Call Clinic
               </a>
 
@@ -835,9 +892,14 @@ export default function Contact() {
               <a
                 href="mailto:contact@novadent.com"
                 className="contactCTAButton"
+                aria-label="Email NOVADENT"
               >
                 Email NOVADENT
-                <ArrowUpRight size={18} />
+
+                <ArrowUpRight
+                  size={18}
+                  aria-hidden="true"
+                />
               </a>
 
             </div>

@@ -234,7 +234,10 @@ export default function Home() {
           WELCOME / ABOUT INTRO
       ===================================================== */}
 
-      <section className="homeIntro section">
+      <section
+        className="homeIntro section"
+        aria-labelledby="home-intro-title"
+      >
 
         <div className="container homeIntroGrid">
 
@@ -243,8 +246,16 @@ export default function Home() {
           <div className="homeIntroImage">
 
             <div className="introImageBadge">
-              <Sparkles size={16} />
-              <span>Modern • Gentle • Personal</span>
+
+              <Sparkles
+                size={16}
+                aria-hidden="true"
+              />
+
+              <span>
+                Modern • Gentle • Personal
+              </span>
+
             </div>
 
 
@@ -255,9 +266,7 @@ export default function Home() {
                 <img
                   key={image}
                   src={image}
-                  alt={`NOVADENT Dental Care ${
-                    index + 1
-                  }`}
+                  alt={`NOVADENT Dental Care interior ${index + 1}`}
                   className={`introSlide ${
                     index === introImage
                       ? "introSlideActive"
@@ -274,7 +283,10 @@ export default function Home() {
             </div>
 
 
-            <div className="introImageOverlay"></div>
+            <div
+              className="introImageOverlay"
+              aria-hidden="true"
+            ></div>
 
 
             <div className="introImageCard">
@@ -312,6 +324,7 @@ export default function Home() {
               <ArrowRight
                 size={20}
                 className="introArrowLeftIcon"
+                aria-hidden="true"
               />
 
             </button>
@@ -336,14 +349,20 @@ export default function Home() {
               aria-label="Next dental image"
             >
 
-              <ArrowRight size={20} />
+              <ArrowRight
+                size={20}
+                aria-hidden="true"
+              />
 
             </button>
 
 
             {/* DOTS */}
 
-            <div className="introSliderDots">
+            <div
+              className="introSliderDots"
+              aria-label="Dental clinic image navigation"
+            >
 
               {introImages.map((_, index) => (
 
@@ -366,9 +385,12 @@ export default function Home() {
                     setIntroImage(index);
 
                   }}
-                  aria-label={`Show dental image ${
-                    index + 1
-                  }`}
+                  aria-label={`Show dental image ${index + 1}`}
+                  aria-current={
+                    index === introImage
+                      ? "true"
+                      : undefined
+                  }
                 />
 
               ))}
@@ -386,7 +408,7 @@ export default function Home() {
               YOUR SMILE. YOUR CONFIDENCE.
             </span>
 
-            <h2>
+            <h2 id="home-intro-title">
               A smile worth feeling confident about
             </h2>
 
@@ -405,9 +427,13 @@ export default function Home() {
             <Link
               to="/about"
               className="homeIntroButton"
+              aria-label="Discover more about NOVADENT"
             >
               Discover NOVADENT
-              <ArrowUpRight size={17} />
+              <ArrowUpRight
+                size={17}
+                aria-hidden="true"
+              />
             </Link>
 
           </div>
@@ -421,17 +447,25 @@ export default function Home() {
           STATS
       ===================================================== */}
 
-      <section className="homeStats">
+      <section
+        className="homeStats"
+        aria-label="NOVADENT dental care statistics"
+      >
 
-        <div className="statsGlow"></div>
+        <div
+          className="statsGlow"
+          aria-hidden="true"
+        ></div>
 
         <div className="container homeStatsGrid">
-
 
           <div className="homeStat interactiveStat">
 
             <div className="statIcon">
-              <Award size={21} />
+              <Award
+                size={21}
+                aria-hidden="true"
+              />
             </div>
 
             <AnimatedCounter
@@ -453,7 +487,10 @@ export default function Home() {
           <div className="homeStat interactiveStat">
 
             <div className="statIcon">
-              <Users size={21} />
+              <Users
+                size={21}
+                aria-hidden="true"
+              />
             </div>
 
             <AnimatedCounter
@@ -475,7 +512,10 @@ export default function Home() {
           <div className="homeStat interactiveStat">
 
             <div className="statIcon">
-              <HeartPulse size={21} />
+              <HeartPulse
+                size={21}
+                aria-hidden="true"
+              />
             </div>
 
             <AnimatedCounter
@@ -497,7 +537,10 @@ export default function Home() {
           <div className="homeStat interactiveStat">
 
             <div className="statIcon">
-              <Star size={21} />
+              <Star
+                size={21}
+                aria-hidden="true"
+              />
             </div>
 
             <strong>
@@ -523,7 +566,10 @@ export default function Home() {
           TREATMENTS
       ===================================================== */}
 
-      <section className="homeServices section">
+      <section
+        className="homeServices section"
+        aria-labelledby="treatments-title"
+      >
 
         <div className="container">
 
@@ -539,7 +585,7 @@ export default function Home() {
                 02 / TREATMENTS
               </div>
 
-              <h2>
+              <h2 id="treatments-title">
                 Complete care for
                 <span> every smile.</span>
               </h2>
@@ -556,13 +602,17 @@ export default function Home() {
             <Link
               to="/treatments"
               className="outlineButton animatedButton"
+              aria-label="Explore NOVADENT treatments"
             >
 
               <span>
                 Explore Treatments
               </span>
 
-              <ArrowRight size={18} />
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+              />
 
             </Link>
 
@@ -598,7 +648,10 @@ export default function Home() {
           <div className="servicesBottomNote">
 
             <div className="noteIcon">
-              <CheckCircle size={18} />
+              <CheckCircle
+                size={18}
+                aria-hidden="true"
+              />
             </div>
 
             <div>
@@ -614,12 +667,16 @@ export default function Home() {
 
             </div>
 
-            <Link to="/appointment">
-
+            <Link
+              to="/appointment"
+              aria-label="Book a NOVADENT consultation"
+            >
               Book Consultation
 
-              <ArrowUpRight size={16} />
-
+              <ArrowUpRight
+                size={16}
+                aria-hidden="true"
+              />
             </Link>
 
           </div>
@@ -633,13 +690,22 @@ export default function Home() {
           WHY NOVADENT
       ===================================================== */}
 
-      <section className="homeWhy section">
+      <section
+        className="homeWhy section"
+        aria-labelledby="why-novadent-title"
+      >
 
-        <div className="homeWhyDecor homeWhyDecorOne"></div>
-        <div className="homeWhyDecor homeWhyDecorTwo"></div>
+        <div
+          className="homeWhyDecor homeWhyDecorOne"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          className="homeWhyDecor homeWhyDecorTwo"
+          aria-hidden="true"
+        ></div>
 
         <div className="container homeWhyGrid">
-
 
           {/* IMAGE */}
 
@@ -652,15 +718,22 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1300&q=90"
               alt="Modern dental treatment at NOVADENT"
+              loading="lazy"
             />
 
-            <div className="imageShine"></div>
+            <div
+              className="imageShine"
+              aria-hidden="true"
+            ></div>
 
 
             <div className="homeWhyFloating">
 
               <div className="floatingIcon">
-                <ShieldCheck size={24} />
+                <ShieldCheck
+                  size={24}
+                  aria-hidden="true"
+                />
               </div>
 
               <div>
@@ -705,7 +778,7 @@ export default function Home() {
               03 / THE NOVADENT DIFFERENCE
             </div>
 
-            <h2>
+            <h2 id="why-novadent-title">
               More than dentistry.
               <span>
                 {" "}
@@ -729,6 +802,7 @@ export default function Home() {
                   type="button"
                   key={item.title}
                   className="interactiveBenefit"
+                  aria-label={`${item.title}: ${item.text}`}
                 >
 
                   <span className="benefitNumber">
@@ -754,6 +828,7 @@ export default function Home() {
                   <ChevronRight
                     className="benefitArrow"
                     size={20}
+                    aria-hidden="true"
                   />
 
                 </button>
@@ -766,13 +841,17 @@ export default function Home() {
             <Link
               to="/about"
               className="primaryButton animatedButton"
+              aria-label="Learn why you should choose NOVADENT"
             >
 
               <span>
                 Why Choose NOVADENT
               </span>
 
-              <ArrowUpRight size={18} />
+              <ArrowUpRight
+                size={18}
+                aria-hidden="true"
+              />
 
             </Link>
 
@@ -787,7 +866,10 @@ export default function Home() {
           DOCTORS
       ===================================================== */}
 
-      <section className="homeDoctors section">
+      <section
+        className="homeDoctors section"
+        aria-labelledby="doctors-title"
+      >
 
         <div className="container">
 
@@ -803,7 +885,7 @@ export default function Home() {
                 04 / OUR DENTISTS
               </div>
 
-              <h2>
+              <h2 id="doctors-title">
                 Meet your
                 <span>
                   {" "}
@@ -823,13 +905,17 @@ export default function Home() {
             <Link
               to="/doctors"
               className="outlineButton animatedButton"
+              aria-label="Meet the NOVADENT doctors"
             >
 
               <span>
                 Meet Our Doctors
               </span>
 
-              <ArrowRight size={18} />
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+              />
 
             </Link>
 
@@ -869,23 +955,37 @@ export default function Home() {
           SMILE BANNER
       ===================================================== */}
 
-      <section className="homeSmileBanner">
+      <section
+        className="homeSmileBanner"
+        aria-labelledby="smile-banner-title"
+      >
 
         <img
           src="https://images.unsplash.com/photo-1606265752439-1f18756aa2d3?auto=format&fit=crop&w=1800&q=90"
-          alt="Comfortable dental experience"
+          alt="Comfortable dental experience at NOVADENT"
           className="smileBannerImage"
+          loading="lazy"
         />
 
-        <div className="homeSmileOverlay"></div>
-        <div className="smileBannerGlow"></div>
+        <div
+          className="homeSmileOverlay"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          className="smileBannerGlow"
+          aria-hidden="true"
+        ></div>
 
 
         <div className="container homeSmileContent">
 
           <div className="bannerFloatingTag">
 
-            <Sparkles size={15} />
+            <Sparkles
+              size={15}
+              aria-hidden="true"
+            />
 
             <span>
               A smile worth feeling confident about
@@ -899,7 +999,10 @@ export default function Home() {
           </span>
 
 
-          <h2 className="homeSmileTitle">
+          <h2
+            id="smile-banner-title"
+            className="homeSmileTitle"
+          >
 
             Feel good. Smile freely.
 
@@ -924,13 +1027,17 @@ export default function Home() {
             <Link
               to="/treatments"
               className="lightButton animatedButton"
+              aria-label="Explore NOVADENT treatments"
             >
 
               <span>
                 Explore Treatments
               </span>
 
-              <ArrowRight size={18} />
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+              />
 
             </Link>
 
@@ -945,7 +1052,10 @@ export default function Home() {
           TESTIMONIAL
       ===================================================== */}
 
-      <section className="homeTestimonial section">
+      <section
+        className="homeTestimonial section"
+        aria-labelledby="patient-stories-title"
+      >
 
         <div className="container">
 
@@ -957,7 +1067,10 @@ export default function Home() {
                 PATIENT STORIES
               </span>
 
-              <div className="sectionNumber">
+              <div
+                className="sectionNumber"
+                id="patient-stories-title"
+              >
                 05 / EXPERIENCES
               </div>
 
@@ -966,7 +1079,10 @@ export default function Home() {
 
             <div className="testimonialRatingTop">
 
-              <div className="stars">
+              <div
+                className="stars"
+                aria-label="Five star rating"
+              >
                 ★★★★★
               </div>
 
@@ -985,7 +1101,10 @@ export default function Home() {
 
           <div className="testimonialBox">
 
-            <div className="testimonialQuote">
+            <div
+              className="testimonialQuote"
+              aria-hidden="true"
+            >
               “
             </div>
 
@@ -1003,7 +1122,10 @@ export default function Home() {
 
               <div className="testimonialAuthor">
 
-                <div className="testimonialAvatar">
+                <div
+                  className="testimonialAvatar"
+                  aria-hidden="true"
+                >
                   {testimonials[activeReview].initials}
                 </div>
 
@@ -1037,18 +1159,22 @@ export default function Home() {
                       testimonials.length
                   )
                 }
-                aria-label="Previous review"
+                aria-label="Previous patient review"
               >
 
                 <ArrowRight
                   size={18}
                   className="rotateLeft"
+                  aria-hidden="true"
                 />
 
               </button>
 
 
-              <div className="testimonialDots">
+              <div
+                className="testimonialDots"
+                aria-label="Patient review navigation"
+              >
 
                 {testimonials.map((_, index) => (
 
@@ -1063,7 +1189,12 @@ export default function Home() {
                     onClick={() =>
                       setActiveReview(index)
                     }
-                    aria-label={`Review ${index + 1}`}
+                    aria-label={`Show patient review ${index + 1}`}
+                    aria-current={
+                      activeReview === index
+                        ? "true"
+                        : undefined
+                    }
                   />
 
                 ))}
@@ -1080,10 +1211,13 @@ export default function Home() {
                       testimonials.length
                   )
                 }
-                aria-label="Next review"
+                aria-label="Next patient review"
               >
 
-                <ArrowRight size={18} />
+                <ArrowRight
+                  size={18}
+                  aria-hidden="true"
+                />
 
               </button>
 

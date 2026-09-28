@@ -54,8 +54,10 @@ export default function About() {
           HERO
       ===================================================== */}
 
-      <section className="aboutHero pageHero">
-
+      <section
+        className="aboutHero pageHero"
+        aria-labelledby="about-page-title"
+      >
         <div className="aboutHeroImage">
           <img
             src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=90"
@@ -66,9 +68,8 @@ export default function About() {
         <div className="aboutHeroOverlay"></div>
 
         <div className="container aboutHeroContent">
-
           <div className="aboutHeroBadge">
-            <Sparkles size={15} />
+            <Sparkles size={15} aria-hidden="true" />
             <span>ABOUT NOVADENT DENTAL CARE</span>
           </div>
 
@@ -76,7 +77,7 @@ export default function About() {
             WHERE CARE MEETS CONFIDENCE
           </span>
 
-          <h1>
+          <h1 id="about-page-title">
             Dentistry designed
             <span>around you.</span>
           </h1>
@@ -85,28 +86,12 @@ export default function About() {
             Modern dental care with a human approach — thoughtful,
             comfortable and personalized for every smile.
           </p>
-
-          <div className="aboutHeroActions">
-
-            <Link to="/appointment" className="lightButton">
-              <span>Book an Appointment</span>
-              <ArrowUpRight size={18} />
-            </Link>
-
-            <a href="#our-story" className="aboutScrollLink">
-              Discover Our Story
-              <ArrowRight size={17} />
-            </a>
-
-          </div>
-
         </div>
 
-        <div className="aboutHeroScroll">
+        <div className="aboutHeroScroll" aria-hidden="true">
           <span>SCROLL TO EXPLORE</span>
           <div></div>
         </div>
-
       </section>
 
 
@@ -114,12 +99,14 @@ export default function About() {
           OUR STORY
       ===================================================== */}
 
-      <section id="our-story" className="aboutIntro section">
-
+      <section
+        id="our-story"
+        className="aboutIntro section"
+        aria-labelledby="our-story-title"
+      >
         <div className="container aboutIntroGrid">
 
           <div className="aboutIntroImage">
-
             <div className="aboutImageNumber">
               01 / OUR STORY
             </div>
@@ -133,18 +120,15 @@ export default function About() {
             <div className="aboutImageGlow"></div>
 
             <div className="floatingAboutCard">
-
               <div className="aboutFloatingIcon">
-                <Award size={23} />
+                <Award size={23} aria-hidden="true" />
               </div>
 
               <div>
                 <strong>10+ Years</strong>
                 <span>Dental Experience</span>
               </div>
-
             </div>
-
           </div>
 
 
@@ -158,7 +142,7 @@ export default function About() {
               01 / WHO WE ARE
             </div>
 
-            <h2>
+            <h2 id="our-story-title">
               A better dental
               <span>experience starts with care.</span>
             </h2>
@@ -186,21 +170,21 @@ export default function About() {
             <div className="aboutChecklist">
 
               <div>
-                <CheckCircle size={19} />
+                <CheckCircle size={19} aria-hidden="true" />
                 <span>
                   Comfortable and welcoming environment
                 </span>
               </div>
 
               <div>
-                <CheckCircle size={19} />
+                <CheckCircle size={19} aria-hidden="true" />
                 <span>
                   Clear and personalized treatment planning
                 </span>
               </div>
 
               <div>
-                <CheckCircle size={19} />
+                <CheckCircle size={19} aria-hidden="true" />
                 <span>
                   Modern dental care and technology
                 </span>
@@ -208,15 +192,17 @@ export default function About() {
 
             </div>
 
-            <Link to="/contact" className="primaryButton">
+            <Link
+              to="/contact"
+              className="primaryButton"
+              aria-label="Talk to the NOVADENT dental care team"
+            >
               <span>Talk to Our Team</span>
-              <ArrowUpRight size={18} />
+              <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
 
           </div>
-
         </div>
-
       </section>
 
 
@@ -224,14 +210,15 @@ export default function About() {
           VALUES
       ===================================================== */}
 
-      <section className="valuesSection section">
-
+      <section
+        className="valuesSection section"
+        aria-labelledby="values-title"
+      >
         <div className="container">
 
           <div className="aboutSectionHeading">
 
             <div>
-
               <span className="eyebrow">
                 WHAT WE BELIEVE
               </span>
@@ -240,11 +227,10 @@ export default function About() {
                 02 / OUR VALUES
               </div>
 
-              <h2>
+              <h2 id="values-title">
                 Care that feels
                 <span>genuinely personal.</span>
               </h2>
-
             </div>
 
             <p>
@@ -259,44 +245,40 @@ export default function About() {
           <div className="valueGrid">
 
             {values.map((value) => (
-
               <article
                 className="valueCard"
                 key={value.number}
               >
-
                 <div className="valueCardTop">
 
                   <span className="valueNumber">
                     {value.number}
                   </span>
 
-                  <div className="valueIcon">
+                  <div
+                    className="valueIcon"
+                    aria-hidden="true"
+                  >
                     {value.icon}
                   </div>
 
                 </div>
 
-                <h3>
-                  {value.title}
-                </h3>
+                <h3>{value.title}</h3>
 
-                <p>
-                  {value.text}
-                </p>
+                <p>{value.text}</p>
 
-                <span className="valueArrow">
+                <span
+                  className="valueArrow"
+                  aria-hidden="true"
+                >
                   <ArrowUpRight size={18} />
                 </span>
-
               </article>
-
             ))}
 
           </div>
-
         </div>
-
       </section>
 
 
@@ -304,10 +286,11 @@ export default function About() {
           TECHNOLOGY
       ===================================================== */}
 
-      <section className="aboutTechnology section">
-
+      <section
+        className="aboutTechnology section"
+        aria-labelledby="technology-title"
+      >
         <div className="container technologyGrid">
-
 
           {/* LEFT CONTENT */}
 
@@ -321,7 +304,7 @@ export default function About() {
               03 / TECHNOLOGY & CARE
             </div>
 
-            <h2>
+            <h2 id="technology-title">
               Technology that{" "}
               <span>supports better care.</span>
             </h2>
@@ -337,26 +320,23 @@ export default function About() {
             <div className="technologyPoints">
 
               {technologyPoints.map((point, index) => (
-
                 <div
                   className="technologyPoint"
                   key={point}
                 >
-
                   <span className="techNumber">
                     0{index + 1}
                   </span>
 
-                  <div className="techIcon">
+                  <div
+                    className="techIcon"
+                    aria-hidden="true"
+                  >
                     <CheckCircle size={17} />
                   </div>
 
-                  <span>
-                    {point}
-                  </span>
-
+                  <span>{point}</span>
                 </div>
-
               ))}
 
             </div>
@@ -365,9 +345,10 @@ export default function About() {
             <Link
               to="/treatments"
               className="outlineButton"
+              aria-label="Explore NOVADENT dental treatments"
             >
               <span>Explore Treatments</span>
-              <ArrowRight size={18} />
+              <ArrowRight size={18} aria-hidden="true" />
             </Link>
 
           </div>
@@ -385,11 +366,10 @@ export default function About() {
 
             <div className="technologyImageOverlay"></div>
 
-
             <div className="imageOverlayCard">
 
               <div className="overlayCardIcon">
-                <Stethoscope size={22} />
+                <Stethoscope size={22} aria-hidden="true" />
               </div>
 
               <div>
@@ -407,7 +387,6 @@ export default function About() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -415,8 +394,10 @@ export default function About() {
           STATS
       ===================================================== */}
 
-      <section className="aboutStats">
-
+      <section
+        className="aboutStats"
+        aria-label="NOVADENT clinic statistics"
+      >
         <div className="aboutStatsGlow"></div>
 
         <div className="container aboutStatsGrid">
@@ -446,7 +427,6 @@ export default function About() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -454,21 +434,22 @@ export default function About() {
           OUR PROMISE
       ===================================================== */}
 
-      <section className="aboutPromise section">
-
+      <section
+        className="aboutPromise section"
+        aria-labelledby="promise-title"
+      >
         <div className="container aboutPromiseGrid">
-
 
           <div className="aboutPromiseImage">
 
             <img
               src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=90"
-              alt="Comfortable patient care"
+              alt="Comfortable patient care at NOVADENT"
               loading="lazy"
             />
 
             <div className="promiseBadge">
-              <HeartPulse size={19} />
+              <HeartPulse size={19} aria-hidden="true" />
               <span>
                 Care Beyond Treatment
               </span>
@@ -483,7 +464,7 @@ export default function About() {
               OUR PROMISE
             </span>
 
-            <h2>
+            <h2 id="promise-title">
               You deserve to feel
               <span>comfortable at the dentist.</span>
             </h2>
@@ -500,7 +481,10 @@ export default function About() {
 
               <div>
 
-                <div className="promisePointIcon">
+                <div
+                  className="promisePointIcon"
+                  aria-hidden="true"
+                >
                   <ShieldCheck size={20} />
                 </div>
 
@@ -519,7 +503,10 @@ export default function About() {
 
               <div>
 
-                <div className="promisePointIcon">
+                <div
+                  className="promisePointIcon"
+                  aria-hidden="true"
+                >
                   <HeartPulse size={20} />
                 </div>
 
@@ -538,7 +525,10 @@ export default function About() {
 
               <div>
 
-                <div className="promisePointIcon">
+                <div
+                  className="promisePointIcon"
+                  aria-hidden="true"
+                >
                   <Award size={20} />
                 </div>
 
@@ -559,60 +549,61 @@ export default function About() {
           </div>
 
         </div>
-
       </section>
 
 
-    {/* =====================================================
-    FINAL CTA
-===================================================== */}
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
 
-<section className="aboutCTA">
+      <section
+        className="aboutCTA"
+        aria-labelledby="about-cta-title"
+      >
+        <div className="ctaGlow"></div>
 
-  <div className="ctaGlow"></div>
+        <div className="container">
 
-  <div className="container">
+          <div className="aboutCTACard">
 
-    <div className="aboutCTACard">
+            <div className="aboutCTABadge">
+              <Clock3 size={15} aria-hidden="true" />
+              <span>
+                MONDAY – SATURDAY · 9 AM – 6 PM
+              </span>
+            </div>
 
-      <div className="aboutCTABadge">
-        <Clock3 size={15} />
-        <span>
-          MONDAY – SATURDAY · 9 AM – 6 PM
-        </span>
-      </div>
+            <span className="eyebrow lightEyebrow">
+              START YOUR SMILE JOURNEY
+            </span>
 
-      <span className="eyebrow lightEyebrow">
-        START YOUR SMILE JOURNEY
-      </span>
+            <h2 id="about-cta-title">
+              Let's take care of
+              <span>your smile.</span>
+            </h2>
 
-      <h2>
-        Let's take care of
-        <span>your smile.</span>
-      </h2>
+            <p>
+              Have questions about your dental health or a treatment
+              you are considering? Our team is ready to help.
+            </p>
 
-      <p>
-        Have questions about your dental health or a treatment
-        you are considering? Our team is ready to help.
-      </p>
+            <div className="ctaActions">
 
-      <div className="ctaActions">
+              <Link
+                to="/contact"
+                className="aboutCTASecondary aboutCTAContactButton"
+                aria-label="Contact NOVADENT dental care"
+              >
+                Contact NOVADENT
+                <ArrowRight size={17} aria-hidden="true" />
+              </Link>
 
-        <Link
-          to="/contact"
-          className="aboutCTASecondary aboutCTAContactButton"
-        >
-          Contact NOVADENT
-          <ArrowRight size={17} />
-        </Link>
+            </div>
 
-      </div>
+          </div>
 
-    </div>
-
-  </div>
-
-</section>
+        </div>
+      </section>
 
     </main>
   );

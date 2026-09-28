@@ -80,8 +80,10 @@ export default function Appointment() {
           HERO
       ===================================================== */}
 
-      <section className="novaAppointmentHero">
-
+      <section
+        className="novaAppointmentHero"
+        aria-labelledby="appointment-hero-title"
+      >
         <div className="appointmentHeroGlow"></div>
 
         <div className="appointmentContainer appointmentHeroGrid">
@@ -91,11 +93,11 @@ export default function Appointment() {
           <div className="appointmentHeroContent">
 
             <span className="appointmentEyebrow">
-              <CalendarDays size={16} />
+              <CalendarDays size={16} aria-hidden="true" />
               NOVADENT · APPOINTMENTS
             </span>
 
-            <h1>
+            <h1 id="appointment-hero-title">
               Your smile
               <em> deserves better care.</em>
             </h1>
@@ -105,46 +107,30 @@ export default function Appointment() {
               take the first step toward a healthier, more confident smile.
             </p>
 
-            <div className="appointmentHeroActions">
+            {/* Hero buttons removed as requested */}
 
-              <a
-                href="#appointmentForm"
-                className="appointmentPrimaryBtn"
-              >
-                Book Your Visit
-                <ArrowUpRight size={18} />
-              </a>
-
-              <a
-                href="tel:+919876543210"
-                className="appointmentPhoneBtn"
-              >
-                <Phone size={17} />
-                <span>+91 98765 43210</span>
-              </a>
-
-            </div>
-
-            <div className="appointmentTrustRow">
-
+            <div
+              className="appointmentTrustRow"
+              aria-label="NOVADENT appointment benefits"
+            >
               <div>
-                <CheckCircle size={17} />
+                <CheckCircle size={17} aria-hidden="true" />
                 <span>Easy Booking</span>
               </div>
 
               <div>
-                <ShieldCheck size={17} />
+                <ShieldCheck size={17} aria-hidden="true" />
                 <span>Patient First</span>
               </div>
 
               <div>
-                <Sparkles size={17} />
+                <Sparkles size={17} aria-hidden="true" />
                 <span>Modern Care</span>
               </div>
-
             </div>
 
           </div>
+
 
           {/* HERO IMAGE */}
 
@@ -164,7 +150,7 @@ export default function Appointment() {
             <div className="appointmentFloatingCard">
 
               <div className="floatingIcon">
-                <CalendarDays size={20} />
+                <CalendarDays size={20} aria-hidden="true" />
               </div>
 
               <div>
@@ -177,15 +163,17 @@ export default function Appointment() {
           </div>
 
         </div>
-
       </section>
+
 
       {/* =====================================================
           INTRO
       ===================================================== */}
 
-      <section className="appointmentIntro">
-
+      <section
+        className="appointmentIntro"
+        aria-labelledby="appointment-intro-title"
+      >
         <div className="appointmentContainer appointmentIntroGrid">
 
           <div>
@@ -198,12 +186,13 @@ export default function Appointment() {
               01 / APPOINTMENT
             </small>
 
-            <h2>
+            <h2 id="appointment-intro-title">
               Simple booking.
               <em> Comfortable care.</em>
             </h2>
 
           </div>
+
 
           <div className="appointmentIntroText">
 
@@ -216,7 +205,7 @@ export default function Appointment() {
 
               <div className="appointmentInfoCard">
 
-                <Clock3 size={20} />
+                <Clock3 size={20} aria-hidden="true" />
 
                 <div>
                   <strong>Clinic Hours</strong>
@@ -225,9 +214,10 @@ export default function Appointment() {
 
               </div>
 
+
               <div className="appointmentInfoCard">
 
-                <MapPin size={20} />
+                <MapPin size={20} aria-hidden="true" />
 
                 <div>
                   <strong>Visit Us</strong>
@@ -241,8 +231,8 @@ export default function Appointment() {
           </div>
 
         </div>
-
       </section>
+
 
       {/* =====================================================
           APPOINTMENT FORM
@@ -251,6 +241,7 @@ export default function Appointment() {
       <section
         id="appointmentForm"
         className="appointmentFormSection"
+        aria-labelledby="appointment-form-title"
       >
 
         <div className="appointmentContainer">
@@ -267,7 +258,7 @@ export default function Appointment() {
                 02 / YOUR DETAILS
               </small>
 
-              <h2>
+              <h2 id="appointment-form-title">
                 Let's plan your
                 <em> next visit.</em>
               </h2>
@@ -280,6 +271,7 @@ export default function Appointment() {
             </p>
 
           </div>
+
 
           <div className="appointmentFormLayout">
 
@@ -315,6 +307,7 @@ export default function Appointment() {
 
                     </div>
 
+
                     <div className="formField">
 
                       <label htmlFor="appointment-phone">
@@ -334,6 +327,7 @@ export default function Appointment() {
                     </div>
 
                   </div>
+
 
                   {/* EMAIL + SERVICE */}
 
@@ -356,6 +350,7 @@ export default function Appointment() {
                       />
 
                     </div>
+
 
                     <div className="formField">
 
@@ -390,6 +385,7 @@ export default function Appointment() {
 
                   </div>
 
+
                   {/* DATE + TIME */}
 
                   <div className="formRow">
@@ -410,6 +406,7 @@ export default function Appointment() {
                       />
 
                     </div>
+
 
                     <div className="formField">
 
@@ -444,6 +441,7 @@ export default function Appointment() {
 
                   </div>
 
+
                   {/* MESSAGE */}
 
                   <div className="formField">
@@ -463,19 +461,21 @@ export default function Appointment() {
 
                   </div>
 
+
                   {/* SUBMIT */}
 
                   <button
                     type="submit"
                     className="appointmentSubmitBtn"
                   >
-
                     <span>
                       Request Appointment
                     </span>
 
-                    <ArrowUpRight size={19} />
-
+                    <ArrowUpRight
+                      size={19}
+                      aria-hidden="true"
+                    />
                   </button>
 
                   <p className="appointmentFormNote">
@@ -494,7 +494,10 @@ export default function Appointment() {
                 <div className="appointmentSuccess">
 
                   <div className="successIcon">
-                    <CheckCircle size={42} />
+                    <CheckCircle
+                      size={42}
+                      aria-hidden="true"
+                    />
                   </div>
 
                   <span>
@@ -517,7 +520,10 @@ export default function Appointment() {
                     className="appointmentAgainBtn"
                   >
                     Book Another Appointment
-                    <ArrowUpRight size={18} />
+                    <ArrowUpRight
+                      size={18}
+                      aria-hidden="true"
+                    />
                   </button>
 
                 </div>
@@ -525,6 +531,7 @@ export default function Appointment() {
               )}
 
             </div>
+
 
             {/* =================================================
                 SIDE INFORMATION
@@ -540,7 +547,10 @@ export default function Appointment() {
                   01
                 </span>
 
-                <CalendarDays size={28} />
+                <CalendarDays
+                  size={28}
+                  aria-hidden="true"
+                />
 
                 <h3>
                   Find a time
@@ -555,6 +565,7 @@ export default function Appointment() {
 
               </div>
 
+
               {/* CARD 02 */}
 
               <div className="appointmentSideCard">
@@ -563,7 +574,10 @@ export default function Appointment() {
                   02
                 </span>
 
-                <Phone size={24} />
+                <Phone
+                  size={24}
+                  aria-hidden="true"
+                />
 
                 <h3>
                   Prefer to call?
@@ -574,15 +588,20 @@ export default function Appointment() {
                   your visit over the phone.
                 </p>
 
-                <a href="tel:+919876543210">
-
+                <a
+                  href="tel:+919876543210"
+                  aria-label="Call NOVADENT at plus 91 98765 43210"
+                >
                   +91 98765 43210
 
-                  <ArrowUpRight size={16} />
-
+                  <ArrowUpRight
+                    size={16}
+                    aria-hidden="true"
+                  />
                 </a>
 
               </div>
+
 
               {/* CARD 03 */}
 
@@ -592,7 +611,10 @@ export default function Appointment() {
                   03
                 </span>
 
-                <Mail size={24} />
+                <Mail
+                  size={24}
+                  aria-hidden="true"
+                />
 
                 <h3>
                   Have a question?
@@ -603,12 +625,16 @@ export default function Appointment() {
                   with your dental care questions.
                 </p>
 
-                <a href="mailto:hello@novadent.com">
-
+                <a
+                  href="mailto:hello@novadent.com"
+                  aria-label="Email NOVADENT at hello@novadent.com"
+                >
                   hello@novadent.com
 
-                  <ArrowUpRight size={16} />
-
+                  <ArrowUpRight
+                    size={16}
+                    aria-hidden="true"
+                  />
                 </a>
 
               </div>
@@ -621,11 +647,15 @@ export default function Appointment() {
 
       </section>
 
+
       {/* =====================================================
           FINAL CTA
       ===================================================== */}
 
-      <section className="appointmentFinalCTA">
+      <section
+        className="appointmentFinalCTA"
+        aria-labelledby="appointment-cta-title"
+      >
 
         <div className="appointmentContainer">
 
@@ -637,7 +667,7 @@ export default function Appointment() {
                 YOUR SMILE · OUR PRIORITY
               </span>
 
-              <h2>
+              <h2 id="appointment-cta-title">
                 Ready to make your
                 <em> next smile move?</em>
               </h2>
@@ -651,9 +681,13 @@ export default function Appointment() {
             <Link
               to="/contact"
               className="appointmentCTAButton"
+              aria-label="Contact NOVADENT dental care"
             >
               Contact NOVADENT
-              <ArrowUpRight size={19} />
+              <ArrowUpRight
+                size={19}
+                aria-hidden="true"
+              />
             </Link>
 
           </div>

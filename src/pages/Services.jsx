@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import gallery02 from "../assets/gallery/gallery-02.jpg";
 import gallery03 from "../assets/gallery/gallery-03.jpg";
 import gallery04 from "../assets/gallery/gallery-04.jpg";
@@ -17,6 +18,10 @@ import {
   Stethoscope,
   Smile,
 } from "lucide-react";
+
+/* =========================================================
+   SERVICES
+========================================================= */
 
 const services = [
   {
@@ -105,6 +110,10 @@ const services = [
   },
 ];
 
+/* =========================================================
+   BENEFITS
+========================================================= */
+
 const benefits = [
   {
     icon: ShieldCheck,
@@ -128,31 +137,59 @@ const benefits = [
   },
 ];
 
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
 export default function Services() {
   return (
     <main className="novaServicesPage">
 
-      {/* HERO */}
-      <section className="novaServicesHero">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
-        <div className="novaServicesHeroImage"></div>
-        <div className="novaServicesHeroOverlay"></div>
+      <section
+        className="novaServicesHero"
+        aria-labelledby="services-hero-title"
+      >
+
+        <div
+          className="novaServicesHeroImage"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          className="novaServicesHeroOverlay"
+          aria-hidden="true"
+        ></div>
 
         <div className="novaServicesContainer novaServicesHeroContent">
 
           <div className="novaServicesEyebrow">
-            <Sparkles size={15} />
-            <span>MODERN DENTISTRY · PERSONAL CARE</span>
+
+            <Sparkles
+              size={15}
+              aria-hidden="true"
+            />
+
+            <span>
+              MODERN DENTISTRY · PERSONAL CARE
+            </span>
+
           </div>
+
 
           <span className="novaServicesOverline">
             OUR DENTAL SERVICES
           </span>
 
-          <h1>
+
+          <h1 id="services-hero-title">
             Complete care for
             <span> your confident smile.</span>
           </h1>
+
 
           <p>
             From preventive dental care to restorative and smile-enhancing
@@ -160,51 +197,54 @@ export default function Services() {
             modern environment.
           </p>
 
-          <div className="novaServicesHeroActions">
 
-            <Link
-              to="/appointment"
-              className="novaServicesPrimaryButton"
-            >
-              <Stethoscope size={18} />
-              Book a Consultation
-              <ArrowRight size={17} />
-            </Link>
+          {/* HERO BUTTONS REMOVED AS REQUESTED */}
 
-            <Link
-              to="/treatments"
-              className="novaServicesSecondaryButton"
-            >
-              Explore Treatments
-              <ArrowRight size={17} />
-            </Link>
 
-          </div>
-
-          <div className="novaServicesTrust">
+          <div
+            className="novaServicesTrust"
+            aria-label="NOVADENT care benefits"
+          >
 
             <span>
-              <CheckCircle2 size={16} />
+              <CheckCircle2
+                size={16}
+                aria-hidden="true"
+              />
               Personalized Plans
             </span>
 
             <span>
-              <CheckCircle2 size={16} />
+              <CheckCircle2
+                size={16}
+                aria-hidden="true"
+              />
               Modern Care
             </span>
 
             <span>
-              <CheckCircle2 size={16} />
+              <CheckCircle2
+                size={16}
+                aria-hidden="true"
+              />
               Comfort Focused
             </span>
 
           </div>
 
         </div>
+
       </section>
 
-      {/* INTRO */}
-      <section className="novaServicesIntro">
+
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
+      <section
+        className="novaServicesIntro"
+        aria-labelledby="services-intro-title"
+      >
 
         <div className="novaServicesContainer novaServicesIntroGrid">
 
@@ -218,12 +258,13 @@ export default function Services() {
               01 / CARE WITH PURPOSE
             </small>
 
-            <h2>
+            <h2 id="services-intro-title">
               More than a dental
               <span> appointment.</span>
             </h2>
 
           </div>
+
 
           <div className="novaServicesIntroText">
 
@@ -239,20 +280,30 @@ export default function Services() {
               options clearly.
             </p>
 
+
             <div className="novaServicesIntroList">
 
               <span>
-                <CheckCircle2 size={17} />
+                <CheckCircle2
+                  size={17}
+                  aria-hidden="true"
+                />
                 Clear treatment recommendations
               </span>
 
               <span>
-                <CheckCircle2 size={17} />
+                <CheckCircle2
+                  size={17}
+                  aria-hidden="true"
+                />
                 Modern dental technology
               </span>
 
               <span>
-                <CheckCircle2 size={17} />
+                <CheckCircle2
+                  size={17}
+                  aria-hidden="true"
+                />
                 Comfortable patient experience
               </span>
 
@@ -261,10 +312,18 @@ export default function Services() {
           </div>
 
         </div>
+
       </section>
 
-      {/* SERVICES */}
-      <section className="novaServicesSection">
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section
+        className="novaServicesSection"
+        aria-labelledby="services-menu-title"
+      >
 
         <div className="novaServicesContainer">
 
@@ -280,12 +339,13 @@ export default function Services() {
                 02 / SERVICE MENU
               </small>
 
-              <h2>
+              <h2 id="services-menu-title">
                 Dental care for
                 <span> every stage.</span>
               </h2>
 
             </div>
+
 
             <p>
               Explore our core services designed to support prevention,
@@ -294,9 +354,11 @@ export default function Services() {
 
           </div>
 
+
           <div className="novaServicesGrid">
 
             {services.map((service) => (
+
               <article
                 className="novaServiceCard"
                 key={service.number}
@@ -306,81 +368,134 @@ export default function Services() {
 
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} at NOVADENT Dental Care`}
                     loading="lazy"
                   />
 
-                  <div className="novaServiceImageOverlay"></div>
+                  <div
+                    className="novaServiceImageOverlay"
+                    aria-hidden="true"
+                  ></div>
+
 
                   <span className="novaServiceNumber">
                     {service.number}
                   </span>
 
+
                   <span className="novaServiceCategory">
                     {service.category}
                   </span>
 
+
                   <span className="novaServiceDuration">
-                    <Clock3 size={13} />
+
+                    <Clock3
+                      size={13}
+                      aria-hidden="true"
+                    />
+
                     {service.duration}
+
                   </span>
 
-                  <span className="novaServiceImageArrow">
+
+                  <span
+                    className="novaServiceImageArrow"
+                    aria-hidden="true"
+                  >
                     <ArrowUpRight size={18} />
                   </span>
 
                 </div>
+
 
                 <div className="novaServiceBody">
 
                   <div className="novaServiceTitleRow">
 
                     <div>
-                      <small>NOVADENT CARE</small>
-                      <h3>{service.title}</h3>
+
+                      <small>
+                        NOVADENT CARE
+                      </small>
+
+                      <h3>
+                        {service.title}
+                      </h3>
+
                     </div>
 
-                    <div className="novaServiceIcon">
+
+                    <div
+                      className="novaServiceIcon"
+                      aria-hidden="true"
+                    >
                       <Smile size={20} />
                     </div>
 
                   </div>
 
+
                   <p>
                     {service.description}
                   </p>
 
+
                   <div className="novaServicePoints">
 
                     {service.points.map((point) => (
+
                       <span key={point}>
-                        <CheckCircle2 size={13} />
+
+                        <CheckCircle2
+                          size={13}
+                          aria-hidden="true"
+                        />
+
                         {point}
+
                       </span>
+
                     ))}
 
                   </div>
 
+
                   <Link
                     to="/appointment"
                     className="novaServiceLink"
+                    aria-label={`Book ${service.title}`}
                   >
                     Book This Service
-                    <ArrowUpRight size={17} />
+
+                    <ArrowUpRight
+                      size={17}
+                      aria-hidden="true"
+                    />
                   </Link>
 
                 </div>
 
               </article>
+
             ))}
 
           </div>
 
         </div>
+
       </section>
 
-      {/* BENEFITS */}
-      <section className="novaServicesBenefits">
+
+      {/* =====================================================
+          BENEFITS
+      ===================================================== */}
+
+      <section
+        className="novaServicesBenefits"
+        aria-labelledby="services-benefits-title"
+      >
 
         <div className="novaServicesContainer">
 
@@ -390,7 +505,7 @@ export default function Services() {
               WHY NOVADENT
             </span>
 
-            <h2>
+            <h2 id="services-benefits-title">
               Care designed around
               <span> you.</span>
             </h2>
@@ -402,9 +517,11 @@ export default function Services() {
 
           </div>
 
+
           <div className="novaServicesBenefitsGrid">
 
             {benefits.map((benefit) => {
+
               const Icon = benefit.icon;
 
               return (
@@ -413,29 +530,51 @@ export default function Services() {
                   key={benefit.title}
                 >
 
-                  <div className="novaServicesBenefitIcon">
+                  <div
+                    className="novaServicesBenefitIcon"
+                    aria-hidden="true"
+                  >
                     <Icon size={23} />
                   </div>
 
-                  <h3>{benefit.title}</h3>
 
-                  <p>{benefit.text}</p>
+                  <h3>
+                    {benefit.title}
+                  </h3>
 
-                  <span className="novaServicesBenefitArrow">
+
+                  <p>
+                    {benefit.text}
+                  </p>
+
+
+                  <span
+                    className="novaServicesBenefitArrow"
+                    aria-hidden="true"
+                  >
                     <ArrowUpRight size={17} />
                   </span>
 
                 </article>
               );
+
             })}
 
           </div>
 
         </div>
+
       </section>
 
-      {/* SERVICE JOURNEY */}
-      <section className="novaServicesJourney">
+
+      {/* =====================================================
+          SERVICE JOURNEY
+      ===================================================== */}
+
+      <section
+        className="novaServicesJourney"
+        aria-labelledby="services-journey-title"
+      >
 
         <div className="novaServicesContainer">
 
@@ -445,20 +584,34 @@ export default function Services() {
 
               <img
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85"
-                alt="Modern dental consultation"
+                alt="Modern NOVADENT dental consultation"
                 loading="lazy"
               />
 
+
               <div className="novaServicesJourneyBadge">
-                <HeartPulse size={19} />
+
+                <HeartPulse
+                  size={19}
+                  aria-hidden="true"
+                />
 
                 <div>
-                  <strong>Personalized</strong>
-                  <span>Dental care</span>
+
+                  <strong>
+                    Personalized
+                  </strong>
+
+                  <span>
+                    Dental care
+                  </span>
+
                 </div>
+
               </div>
 
             </div>
+
 
             <div className="novaServicesJourneyContent">
 
@@ -466,62 +619,101 @@ export default function Services() {
                 YOUR DENTAL JOURNEY
               </span>
 
-              <h2>
+
+              <h2 id="services-journey-title">
                 Clear care from
                 <span> first visit to follow-up.</span>
               </h2>
+
 
               <p>
                 We keep your dental journey simple and transparent,
                 helping you understand what happens at every stage.
               </p>
 
+
               <div className="novaServicesJourneySteps">
 
                 <div className="novaServicesJourneyStep">
-                  <span>01</span>
+
+                  <span>
+                    01
+                  </span>
 
                   <div>
-                    <h3>Understand</h3>
+
+                    <h3>
+                      Understand
+                    </h3>
+
                     <p>
                       We listen to your concerns and understand your
                       dental goals.
                     </p>
+
                   </div>
+
                 </div>
 
+
                 <div className="novaServicesJourneyStep">
-                  <span>02</span>
+
+                  <span>
+                    02
+                  </span>
 
                   <div>
-                    <h3>Plan</h3>
+
+                    <h3>
+                      Plan
+                    </h3>
+
                     <p>
                       We explain suitable options and create a clear
                       treatment approach.
                     </p>
+
                   </div>
+
                 </div>
 
+
                 <div className="novaServicesJourneyStep">
-                  <span>03</span>
+
+                  <span>
+                    03
+                  </span>
 
                   <div>
-                    <h3>Care</h3>
+
+                    <h3>
+                      Care
+                    </h3>
+
                     <p>
                       Our team provides thoughtful treatment with a
                       focus on your comfort.
                     </p>
+
                   </div>
+
                 </div>
 
               </div>
 
+
               <Link
                 to="/appointment"
                 className="novaServicesJourneyButton"
+                aria-label="Start your dental journey with NOVADENT"
               >
                 Start Your Dental Journey
-                <ArrowRight size={17} />
+
+                <ArrowRight
+                  size={17}
+                  aria-hidden="true"
+                />
+
               </Link>
 
             </div>
@@ -529,55 +721,94 @@ export default function Services() {
           </div>
 
         </div>
+
       </section>
 
-      {/* CTA */}
-      <section className="novaServicesCTA">
 
-        <div className="novaServicesCTAOverlay"></div>
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section
+        className="novaServicesCTA"
+        aria-labelledby="services-cta-title"
+      >
+
+        <div
+          className="novaServicesCTAOverlay"
+          aria-hidden="true"
+        ></div>
+
 
         <div className="novaServicesContainer novaServicesCTAContent">
 
-          <span className="novaServicesCTAIcon">
+          <span
+            className="novaServicesCTAIcon"
+            aria-hidden="true"
+          >
             <Sparkles size={23} />
           </span>
+
 
           <span className="novaServicesMiniTitle light">
             READY TO TAKE THE NEXT STEP?
           </span>
 
-          <h2>
+
+          <h2 id="services-cta-title">
             Your healthier smile
             <span> starts with a conversation.</span>
           </h2>
+
 
           <p>
             Tell us about your dental concerns and let our team help
             you understand the right next step.
           </p>
 
+
           <div className="novaServicesCTAActions">
 
             <Link
               to="/appointment"
               className="novaServicesCTAPrimary"
+              aria-label="Book an appointment with NOVADENT"
             >
-              <Stethoscope size={18} />
+
+              <Stethoscope
+                size={18}
+                aria-hidden="true"
+              />
+
               Book an Appointment
-              <ArrowRight size={17} />
+
+              <ArrowRight
+                size={17}
+                aria-hidden="true"
+              />
+
             </Link>
+
 
             <Link
               to="/contact"
               className="novaServicesCTASecondary"
+              aria-label="Contact NOVADENT"
             >
+
               Contact NOVADENT
-              <ArrowRight size={17} />
+
+              <ArrowRight
+                size={17}
+                aria-hidden="true"
+              />
+
             </Link>
 
           </div>
 
         </div>
+
       </section>
 
     </main>

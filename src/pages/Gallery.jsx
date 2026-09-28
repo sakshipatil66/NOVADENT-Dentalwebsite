@@ -80,21 +80,39 @@ function Gallery() {
           (item) => item.category === activeCategory
         );
 
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <main className="nova-gallery">
 
-      <section className="nova-gallery-hero">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section
+        className="nova-gallery-hero"
+        aria-labelledby="gallery-hero-title"
+      >
+
         <img
           src={gallery01}
-          alt="NOVADENT Dental Clinic"
+          alt="Modern NOVADENT Dental Clinic interior"
         />
 
-        <div className="nova-gallery-hero-overlay" />
+        <div
+          className="nova-gallery-hero-overlay"
+          aria-hidden="true"
+        />
 
         <div className="nova-gallery-hero-content">
-          <p>NOVADENT · OUR GALLERY</p>
 
-          <h1>
+          <p>
+            NOVADENT · OUR GALLERY
+          </p>
+
+          <h1 id="gallery-hero-title">
             See the space.
             <br />
             <i>Feel the difference.</i>
@@ -105,26 +123,39 @@ function Gallery() {
             expert doctors and patient-focused dental experience.
           </span>
 
-          <a href="#gallery-grid">
-            Explore Gallery ↓
-          </a>
         </div>
+
       </section>
 
-      <section className="nova-gallery-intro">
+
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
+      <section
+        className="nova-gallery-intro"
+        aria-labelledby="gallery-intro-title"
+      >
+
         <div className="nova-gallery-container">
 
           <div>
-            <small>THE NOVADENT EXPERIENCE</small>
 
-            <h2>
+            <small>
+              THE NOVADENT EXPERIENCE
+            </small>
+
+            <h2 id="gallery-intro-title">
               Designed around
               <br />
               <i>your comfort.</i>
             </h2>
+
           </div>
 
+
           <div className="nova-gallery-intro-text">
+
             <p>
               At NOVADENT, modern dentistry meets thoughtful
               design. Every space is created to make your
@@ -135,36 +166,59 @@ function Gallery() {
               Take a closer look at our clinic, treatments,
               technology and patient experience.
             </p>
+
           </div>
 
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          GALLERY
+      ===================================================== */}
 
       <section
         className="nova-gallery-section"
         id="gallery-grid"
+        aria-labelledby="gallery-section-title"
       >
+
         <div className="nova-gallery-container">
 
           <div className="nova-gallery-heading">
-            <div>
-              <small>INSIDE NOVADENT</small>
 
-              <h2>
+            <div>
+
+              <small>
+                INSIDE NOVADENT
+              </small>
+
+              <h2 id="gallery-section-title">
                 A closer look at
                 <br />
                 <i>NOVADENT.</i>
               </h2>
+
             </div>
 
             <strong>
               {filteredImages.length}
               <span> Images</span>
             </strong>
+
           </div>
 
-          <div className="nova-gallery-filters">
+
+          {/* FILTERS */}
+
+          <div
+            className="nova-gallery-filters"
+            aria-label="Gallery categories"
+          >
+
             {categories.map((category) => (
+
               <button
                 key={category}
                 type="button"
@@ -173,98 +227,161 @@ function Gallery() {
                     ? "active"
                     : ""
                 }
-                onClick={() =>
-                  setActiveCategory(category)
-                }
+                onClick={() => setActiveCategory(category)}
+                aria-pressed={activeCategory === category}
               >
                 {category}
               </button>
+
             ))}
+
           </div>
 
+
+          {/* GALLERY GRID */}
+
           <div className="nova-gallery-grid">
+
             {filteredImages.map((item) => (
+
               <button
                 key={item.id}
                 type="button"
                 className="nova-gallery-card"
-                onClick={() =>
-                  setSelectedImage(item)
-                }
+                onClick={() => setSelectedImage(item)}
+                aria-label={`View ${item.title}`}
               >
+
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} at NOVADENT Dental Care`}
+                  loading="lazy"
                 />
 
+
                 <div className="nova-gallery-card-overlay">
+
                   <div>
-                    <small>{item.category}</small>
-                    <h3>{item.title}</h3>
-                    <span>View Image ↗</span>
+
+                    <small>
+                      {item.category}
+                    </small>
+
+                    <h3>
+                      {item.title}
+                    </h3>
+
+                    <span>
+                      View Image ↗
+                    </span>
+
                   </div>
+
                 </div>
+
 
                 <b>
                   {String(item.id).padStart(2, "0")}
                 </b>
+
               </button>
+
             ))}
+
           </div>
 
         </div>
+
       </section>
 
-      <section className="nova-gallery-cta">
+
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+
+      <section
+        className="nova-gallery-cta"
+        aria-labelledby="gallery-cta-title"
+      >
+
         <div className="nova-gallery-container">
-<div className="nova-gallery-cta-box">
-  <div>
-    <small>YOUR SMILE JOURNEY</small>
 
-    <h2>
-      Ready for your
-      <br />
-      <i>next visit?</i>
-    </h2>
+          <div className="nova-gallery-cta-box">
 
-    <p>
-      Experience thoughtful dental care in a
-      modern environment designed around you.
-    </p>
-  </div>
-</div>
+            <div>
+
+              <small>
+                YOUR SMILE JOURNEY
+              </small>
+
+              <h2 id="gallery-cta-title">
+                Ready for your
+                <br />
+                <i>next visit?</i>
+              </h2>
+
+              <p>
+                Experience thoughtful dental care in a
+                modern environment designed around you.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          LIGHTBOX
+      ===================================================== */}
 
       {selectedImage && (
+
         <div
           className="nova-gallery-lightbox"
-          onClick={() => setSelectedImage(null)}
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="gallery-lightbox-title"
         >
+
           <div
             className="nova-gallery-lightbox-box"
-            onClick={(event) =>
-              event.stopPropagation()
-            }
+            onClick={(event) => event.stopPropagation()}
           >
+
             <button
               type="button"
               className="nova-gallery-close"
-              onClick={() => setSelectedImage(null)}
+              onClick={closeLightbox}
+              aria-label="Close image viewer"
             >
               ×
             </button>
 
+
             <img
               src={selectedImage.image}
-              alt={selectedImage.title}
+              alt={`${selectedImage.title} at NOVADENT Dental Care`}
             />
 
-            <small>{selectedImage.category}</small>
 
-            <h3>{selectedImage.title}</h3>
+            <small>
+              {selectedImage.category}
+            </small>
+
+
+            <h3 id="gallery-lightbox-title">
+              {selectedImage.title}
+            </h3>
+
           </div>
+
         </div>
+
       )}
 
     </main>
