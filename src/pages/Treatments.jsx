@@ -184,37 +184,7 @@ export default function Treatments() {
           {/* HERO BUTTONS REMOVED AS REQUESTED */}
 
 
-          <div
-            className="ndtTrust"
-            aria-label="NOVADENT treatment benefits"
-          >
-
-            <span>
-              <CheckCircle
-                size={16}
-                aria-hidden="true"
-              />
-              Modern Approach
-            </span>
-
-            <span>
-              <CheckCircle
-                size={16}
-                aria-hidden="true"
-              />
-              Personalized Plans
-            </span>
-
-            <span>
-              <CheckCircle
-                size={16}
-                aria-hidden="true"
-              />
-              Comfort Focused
-            </span>
-
-          </div>
-
+          
         </div>
       </section>
 

@@ -57,27 +57,7 @@ export default function Contact() {
 
             {/* Hero buttons removed as requested */}
 
-            <div
-              className="contactHeroTrust"
-              aria-label="NOVADENT contact benefits"
-            >
-
-              <div>
-                <CheckCircle size={16} aria-hidden="true" />
-                <span>Quick Response</span>
-              </div>
-
-              <div>
-                <CheckCircle size={16} aria-hidden="true" />
-                <span>Patient First</span>
-              </div>
-
-              <div>
-                <CheckCircle size={16} aria-hidden="true" />
-                <span>Professional Care</span>
-              </div>
-
-            </div>
+          
 
           </div>
 

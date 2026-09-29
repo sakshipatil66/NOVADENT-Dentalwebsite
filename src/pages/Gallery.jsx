@@ -31,8 +31,8 @@ const galleryImages = [
   {
     id: 4,
     image: gallery04,
-    title: "Expert Dental Team",
-    category: "Doctors",
+    title: "Advanced Dental Technology",
+    category: "Technology",
   },
   {
     id: 5,
@@ -64,7 +64,6 @@ const categories = [
   "All",
   "Clinic",
   "Treatment",
-  "Doctors",
   "Technology",
   "Patients",
 ];
@@ -88,14 +87,13 @@ function Gallery() {
     <main className="nova-gallery">
 
       {/* =====================================================
-          HERO
+          HERO — KEEP EXACTLY AS IT IS
       ===================================================== */}
 
       <section
         className="nova-gallery-hero"
         aria-labelledby="gallery-hero-title"
       >
-
         <img
           src={gallery01}
           alt="Modern NOVADENT Dental Clinic interior"
@@ -107,10 +105,7 @@ function Gallery() {
         />
 
         <div className="nova-gallery-hero-content">
-
-          <p>
-            NOVADENT · OUR GALLERY
-          </p>
+          <p>NOVADENT · OUR GALLERY</p>
 
           <h1 id="gallery-hero-title">
             See the space.
@@ -122,39 +117,33 @@ function Gallery() {
             Explore our modern clinic, advanced technology,
             expert doctors and patient-focused dental experience.
           </span>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          INTRO
+          PROFESSIONAL INTRO
       ===================================================== */}
 
       <section
-        className="nova-gallery-intro"
+        className="nova-gallery-intro-pro"
         aria-labelledby="gallery-intro-title"
       >
+        <div className="nova-gallery-intro-pro-inner">
 
-        <div className="nova-gallery-container">
-
-          <div>
-
-            <small>
-              THE NOVADENT EXPERIENCE
-            </small>
+          <div className="nova-gallery-intro-pro-left">
+            <span>THE NOVADENT EXPERIENCE</span>
 
             <h2 id="gallery-intro-title">
               Designed around
               <br />
               <i>your comfort.</i>
             </h2>
-
           </div>
 
+          <div className="nova-gallery-intro-pro-right">
 
-          <div className="nova-gallery-intro-text">
+            <div className="nova-gallery-intro-line" />
 
             <p>
               At NOVADENT, modern dentistry meets thoughtful
@@ -163,49 +152,48 @@ function Gallery() {
             </p>
 
             <p>
-              Take a closer look at our clinic, treatments,
-              technology and patient experience.
+              From advanced treatment rooms to welcoming
+              patient spaces, every detail reflects our
+              commitment to comfortable dental care.
             </p>
+
+            <div className="nova-gallery-intro-meta">
+              <span>01</span>
+              <span>MODERN · CALM · PATIENT FIRST</span>
+            </div>
 
           </div>
 
         </div>
-
       </section>
 
 
       {/* =====================================================
-          GALLERY
+          GALLERY COLLECTION
       ===================================================== */}
 
       <section
-        className="nova-gallery-section"
-        id="gallery-grid"
-        aria-labelledby="gallery-section-title"
+        className="nova-gallery-collection-pro"
+        aria-labelledby="gallery-collection-title"
       >
+        <div className="nova-gallery-collection-inner">
 
-        <div className="nova-gallery-container">
-
-          <div className="nova-gallery-heading">
+          <div className="nova-gallery-collection-header">
 
             <div>
+              <span>INSIDE NOVADENT</span>
 
-              <small>
-                INSIDE NOVADENT
-              </small>
-
-              <h2 id="gallery-section-title">
-                A closer look at
+              <h2 id="gallery-collection-title">
+                Moments from
                 <br />
-                <i>NOVADENT.</i>
+                <i>our clinic.</i>
               </h2>
-
             </div>
 
-            <strong>
-              {filteredImages.length}
-              <span> Images</span>
-            </strong>
+            <div className="nova-gallery-image-count">
+              <strong>{filteredImages.length}</strong>
+              <span>Images</span>
+            </div>
 
           </div>
 
@@ -213,12 +201,10 @@ function Gallery() {
           {/* FILTERS */}
 
           <div
-            className="nova-gallery-filters"
+            className="nova-gallery-filters-pro"
             aria-label="Gallery categories"
           >
-
             {categories.map((category) => (
-
               <button
                 key={category}
                 type="button"
@@ -227,28 +213,32 @@ function Gallery() {
                     ? "active"
                     : ""
                 }
-                onClick={() => setActiveCategory(category)}
-                aria-pressed={activeCategory === category}
+                onClick={() =>
+                  setActiveCategory(category)
+                }
+                aria-pressed={
+                  activeCategory === category
+                }
               >
                 {category}
               </button>
-
             ))}
-
           </div>
 
 
-          {/* GALLERY GRID */}
+          {/* IMAGE GRID */}
 
-          <div className="nova-gallery-grid">
+          <div className="nova-gallery-grid-pro">
 
-            {filteredImages.map((item) => (
-
+            {filteredImages.map((item, index) => (
               <button
                 key={item.id}
                 type="button"
-                className="nova-gallery-card"
+                className="nova-gallery-item-pro"
                 onClick={() => setSelectedImage(item)}
+                style={{
+                  "--gallery-delay": `${index * 0.08}s`,
+                }}
                 aria-label={`View ${item.title}`}
               >
 
@@ -258,76 +248,78 @@ function Gallery() {
                   loading="lazy"
                 />
 
+                <div className="nova-gallery-item-shade" />
 
-                <div className="nova-gallery-card-overlay">
+                <div className="nova-gallery-item-content">
+                  <span>{item.category}</span>
 
-                  <div>
+                  <h3>{item.title}</h3>
 
-                    <small>
-                      {item.category}
-                    </small>
-
-                    <h3>
-                      {item.title}
-                    </h3>
-
-                    <span>
-                      View Image ↗
-                    </span>
-
-                  </div>
-
+                  <small>
+                    View Image <b>↗</b>
+                  </small>
                 </div>
 
-
-                <b>
+                <strong className="nova-gallery-item-number">
                   {String(item.id).padStart(2, "0")}
-                </b>
+                </strong>
 
               </button>
-
             ))}
 
           </div>
 
         </div>
-
       </section>
 
 
       {/* =====================================================
-          FINAL CTA
+          PREMIUM CTA
       ===================================================== */}
 
       <section
-        className="nova-gallery-cta"
+        className="nova-gallery-final-cta"
         aria-labelledby="gallery-cta-title"
       >
 
-        <div className="nova-gallery-container">
+        <div className="nova-gallery-final-cta-image">
+          <img
+            src={gallery03}
+            alt="Comfortable NOVADENT dental care"
+          />
+        </div>
 
-          <div className="nova-gallery-cta-box">
+        <div className="nova-gallery-final-cta-overlay" />
 
-            <div>
+        <div className="nova-gallery-final-cta-content">
 
-              <small>
-                YOUR SMILE JOURNEY
-              </small>
-
-              <h2 id="gallery-cta-title">
-                Ready for your
-                <br />
-                <i>next visit?</i>
-              </h2>
-
-              <p>
-                Experience thoughtful dental care in a
-                modern environment designed around you.
-              </p>
-
-            </div>
-
+          <div className="nova-gallery-hours">
+            <span>◷</span>
+            MONDAY – SATURDAY · 9 AM – 6 PM
           </div>
+
+          <span className="nova-gallery-cta-label">
+            YOUR SMILE DESERVES CARE
+          </span>
+
+          <h2 id="gallery-cta-title">
+            Ready for your
+            <br />
+            <i>next step?</i>
+          </h2>
+
+          <p>
+            Talk with our team about your dental concerns,
+            treatment options and the next step for your smile.
+          </p>
+
+          <a
+            href="/contact"
+            className="nova-gallery-final-button"
+          >
+            Contact NOVADENT
+            <b>→</b>
+          </a>
 
         </div>
 
@@ -339,7 +331,6 @@ function Gallery() {
       ===================================================== */}
 
       {selectedImage && (
-
         <div
           className="nova-gallery-lightbox"
           onClick={closeLightbox}
@@ -347,10 +338,11 @@ function Gallery() {
           aria-modal="true"
           aria-labelledby="gallery-lightbox-title"
         >
-
           <div
             className="nova-gallery-lightbox-box"
-            onClick={(event) => event.stopPropagation()}
+            onClick={(event) =>
+              event.stopPropagation()
+            }
           >
 
             <button
@@ -362,26 +354,19 @@ function Gallery() {
               ×
             </button>
 
-
             <img
               src={selectedImage.image}
               alt={`${selectedImage.title} at NOVADENT Dental Care`}
             />
 
-
-            <small>
-              {selectedImage.category}
-            </small>
-
+            <span>{selectedImage.category}</span>
 
             <h3 id="gallery-lightbox-title">
               {selectedImage.title}
             </h3>
 
           </div>
-
         </div>
-
       )}
 
     </main>

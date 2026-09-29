@@ -8,6 +8,8 @@ import {
   Sparkles,
   Stethoscope,
   CheckCircle2,
+  Star,
+  Users,
 } from "lucide-react";
 
 const doctors = [
@@ -110,6 +112,29 @@ const process = [
   },
 ];
 
+const expertise = [
+  {
+    number: "01",
+    title: "Preventive Care",
+    text: "Regular checkups and preventive guidance designed to protect your smile.",
+  },
+  {
+    number: "02",
+    title: "Cosmetic Dentistry",
+    text: "Natural-looking smile enhancements designed around your individual goals.",
+  },
+  {
+    number: "03",
+    title: "Restorative Dentistry",
+    text: "Comfortable restorative solutions that help rebuild function and confidence.",
+  },
+  {
+    number: "04",
+    title: "Advanced Dental Care",
+    text: "Modern treatment approaches supported by experienced clinical expertise.",
+  },
+];
+
 export default function Doctors() {
   return (
     <main className="novaDoctorsPage">
@@ -125,12 +150,12 @@ export default function Doctors() {
         <div
           className="novaDoctorsHeroOverlay"
           aria-hidden="true"
-        ></div>
+        />
 
         <div className="novaDoctorsHeroContent">
 
           <span className="novaDoctorsEyebrow">
-            <span aria-hidden="true"></span>
+            <span aria-hidden="true" />
             MEET OUR DENTAL TEAM
           </span>
 
@@ -145,54 +170,65 @@ export default function Doctors() {
           </p>
 
         </div>
-      </section>
 
-
-      {/* =====================================================
-          INTRO
-      ===================================================== */}
-
-      <section
-        className="novaDoctorsIntro"
-        aria-labelledby="doctors-intro-title"
-      >
-        <div className="novaDoctorsContainer">
-
-          <div className="novaDoctorsIntroLabel">
-            <span>OUR EXPERTISE</span>
-            <div aria-hidden="true"></div>
-          </div>
-
-          <div className="novaDoctorsIntroGrid">
-
-            <div>
-              <h2 id="doctors-intro-title">
-                Dentistry with
-                <span> skill, care &amp; precision.</span>
-              </h2>
-            </div>
-
-            <div>
-              <p>
-                At NOVADENT, our dental team combines clinical experience,
-                modern techniques and a patient-first approach to make every
-                visit comfortable and meaningful.
-              </p>
-
-              <Link
-                to="/about"
-                className="doctorsTextLink"
-                aria-label="Learn more about NOVADENT"
-              >
-                Learn more about NOVADENT
-                <ArrowRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
-
-          </div>
-
+        <div className="novaDoctorsHeroScroll">
+          <span />
+          SCROLL TO EXPLORE
         </div>
       </section>
+
+
+    {/* =====================================================
+    OUR EXPERTISE
+===================================================== */}
+
+<section
+  className="novaDoctorsIntro"
+  aria-labelledby="doctors-intro-title"
+>
+  <div className="novaDoctorsContainer">
+
+    <div className="novaDoctorsIntroCard">
+
+      <span className="novaDoctorsMiniTitle">
+        OUR EXPERTISE
+      </span>
+
+      <h2 id="doctors-intro-title">
+        Dentistry with
+        <span> skill, care &amp; precision.</span>
+      </h2>
+
+      <div className="novaDoctorsIntroDivider" />
+
+      <div className="novaDoctorsIntroDescription">
+
+        <p>
+          At NOVADENT, our dental team combines clinical experience,
+          modern techniques and a patient-first approach to make every
+          visit comfortable and meaningful.
+        </p>
+
+        <p>
+          From preventive care to advanced treatments, our specialists
+          work together to create personalized dental experiences
+          focused on your long-term oral health.
+        </p>
+
+      </div>
+
+      <Link
+        to="/about"
+        className="doctorsTextLink"
+      >
+        Learn more about NOVADENT
+        <ArrowRight size={16} aria-hidden="true" />
+      </Link>
+
+    </div>
+
+  </div>
+</section>
 
 
       {/* =====================================================
@@ -208,6 +244,7 @@ export default function Doctors() {
           <div className="novaDoctorsSectionHeading">
 
             <div>
+
               <span className="novaDoctorsMiniTitle">
                 OUR SPECIALISTS
               </span>
@@ -216,11 +253,12 @@ export default function Doctors() {
                 Meet the people
                 <span> behind the care.</span>
               </h2>
+
             </div>
 
             <p>
               A multidisciplinary team working together to give you
-              personalized and comfortable dental care.
+              personalized, comfortable and modern dental care.
             </p>
 
           </div>
@@ -245,17 +283,14 @@ export default function Doctors() {
                   <div
                     className="novaDoctorImageOverlay"
                     aria-hidden="true"
-                  ></div>
+                  />
 
                   <div className="novaDoctorSpecialty">
                     {doctor.specialty}
                   </div>
 
                   <div className="novaDoctorExperience">
-                    <Clock3
-                      size={15}
-                      aria-hidden="true"
-                    />
+                    <Clock3 size={15} aria-hidden="true" />
                     <span>{doctor.experience}</span>
                   </div>
 
@@ -279,10 +314,7 @@ export default function Doctors() {
 
                     {doctor.skills.map((skill) => (
                       <span key={skill}>
-                        <CheckCircle2
-                          size={14}
-                          aria-hidden="true"
-                        />
+                        <CheckCircle2 size={14} aria-hidden="true" />
                         {skill}
                       </span>
                     ))}
@@ -300,13 +332,135 @@ export default function Doctors() {
                       to="/appointment"
                       aria-label={`Book an appointment with ${doctor.name}`}
                     >
-                      <ArrowRight
-                        size={17}
-                        aria-hidden="true"
-                      />
+                      <ArrowRight size={17} aria-hidden="true" />
                     </Link>
 
                   </div>
+
+                </div>
+
+              </article>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          TEAM STATS
+      ===================================================== */}
+
+      <section
+        className="novaDoctorsHighlights"
+        aria-label="NOVADENT team highlights"
+      >
+        <div className="novaDoctorsContainer">
+
+          <div className="novaDoctorsHighlightsHeader">
+
+            <span>
+              NOVADENT IN NUMBERS
+            </span>
+
+            <p>
+              Experience, expertise and patient-focused dental care.
+            </p>
+
+          </div>
+
+
+          <div className="novaDoctorsHighlightsGrid">
+
+            <div className="novaDoctorsHighlight">
+              <Users size={22} aria-hidden="true" />
+              <strong>40+</strong>
+              <span>Years of Combined Expertise</span>
+            </div>
+
+            <div className="novaDoctorsHighlight">
+              <HeartPulse size={22} aria-hidden="true" />
+              <strong>5K+</strong>
+              <span>Patients Supported</span>
+            </div>
+
+            <div className="novaDoctorsHighlight">
+              <Stethoscope size={22} aria-hidden="true" />
+              <strong>15+</strong>
+              <span>Dental Care Services</span>
+            </div>
+
+            <div className="novaDoctorsHighlight">
+              <Star size={22} aria-hidden="true" />
+              <strong>4.9</strong>
+              <span>Patient Experience Rating</span>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          EXPERTISE
+      ===================================================== */}
+
+      <section
+        className="novaDoctorsExpertise"
+        aria-labelledby="expertise-title"
+      >
+        <div className="novaDoctorsContainer">
+
+          <div className="novaDoctorsExpertiseHeading">
+
+            <div>
+
+              <span className="novaDoctorsMiniTitle">
+                COMPLETE DENTAL EXPERTISE
+              </span>
+
+              <h2 id="expertise-title">
+                Personalized care
+                <span> for every smile.</span>
+              </h2>
+
+            </div>
+
+            <p>
+              Our team brings together different areas of dental expertise
+              so your care can remain simple, coordinated and personalized.
+            </p>
+
+          </div>
+
+
+          <div className="novaDoctorsExpertiseGrid">
+
+            {expertise.map((item) => (
+              <article
+                className="novaDoctorsExpertiseCard"
+                key={item.number}
+              >
+
+                <span className="novaDoctorsExpertiseNumber">
+                  {item.number}
+                </span>
+
+                <div>
+
+                  <h3>{item.title}</h3>
+
+                  <p>{item.text}</p>
+
+                  <Link
+                    to="/appointment"
+                    aria-label={`Book an appointment for ${item.title}`}
+                  >
+                    Explore treatment
+                    <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
 
                 </div>
 
@@ -351,6 +505,7 @@ export default function Doctors() {
           <div className="novaDoctorsValuesGrid">
 
             {values.map((item) => {
+
               const Icon = item.icon;
 
               return (
@@ -372,6 +527,7 @@ export default function Doctors() {
 
                 </article>
               );
+
             })}
 
           </div>
@@ -402,10 +558,7 @@ export default function Doctors() {
 
               <div className="novaDoctorsProcessBadge">
 
-                <Stethoscope
-                  size={20}
-                  aria-hidden="true"
-                />
+                <Stethoscope size={20} aria-hidden="true" />
 
                 <div>
                   <strong>Patient-focused</strong>
@@ -448,9 +601,11 @@ export default function Doctors() {
                     </span>
 
                     <div>
+
                       <h3>{item.title}</h3>
 
                       <p>{item.text}</p>
+
                     </div>
 
                   </div>
@@ -462,14 +617,10 @@ export default function Doctors() {
               <Link
                 to="/appointment"
                 className="doctorsProcessBtn"
-                aria-label="Schedule a dental visit with NOVADENT"
+                aria-label="Schedule your dental visit"
               >
                 Schedule Your Visit
-
-                <ArrowRight
-                  size={17}
-                  aria-hidden="true"
-                />
+                <ArrowRight size={17} aria-hidden="true" />
               </Link>
 
             </div>
@@ -478,6 +629,11 @@ export default function Doctors() {
 
         </div>
       </section>
+
+
+      {/* =====================================================
+          NO EXTRA FINAL CTA
+      ===================================================== */}
 
     </main>
   );

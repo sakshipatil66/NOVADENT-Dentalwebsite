@@ -229,7 +229,6 @@ export default function Home() {
 
       <Hero />
 
-
       {/* =====================================================
           WELCOME / ABOUT INTRO
       ===================================================== */}
@@ -238,7 +237,6 @@ export default function Home() {
         className="homeIntro section"
         aria-labelledby="home-intro-title"
       >
-
         <div className="container homeIntroGrid">
 
           {/* IMAGE SLIDER */}
@@ -246,7 +244,6 @@ export default function Home() {
           <div className="homeIntroImage">
 
             <div className="introImageBadge">
-
               <Sparkles
                 size={16}
                 aria-hidden="true"
@@ -255,14 +252,11 @@ export default function Home() {
               <span>
                 Modern • Gentle • Personal
               </span>
-
             </div>
-
 
             <div className="introImageSlider">
 
               {introImages.map((image, index) => (
-
                 <img
                   key={image}
                   src={image}
@@ -277,20 +271,16 @@ export default function Home() {
                       : ""
                   }`}
                 />
-
               ))}
 
             </div>
-
 
             <div
               className="introImageOverlay"
               aria-hidden="true"
             ></div>
 
-
             <div className="introImageCard">
-
               <strong>
                 10+
               </strong>
@@ -298,9 +288,7 @@ export default function Home() {
               <span>
                 Years of Dental Excellence
               </span>
-
             </div>
-
 
             {/* PREVIOUS */}
 
@@ -308,7 +296,6 @@ export default function Home() {
               type="button"
               className="introSliderArrow introSliderArrowLeft"
               onClick={() => {
-
                 setIntroDirection("prev");
 
                 setIntroImage(
@@ -316,19 +303,15 @@ export default function Home() {
                     (prev - 1 + introImages.length) %
                     introImages.length
                 );
-
               }}
               aria-label="Previous dental image"
             >
-
               <ArrowRight
                 size={20}
                 className="introArrowLeftIcon"
                 aria-hidden="true"
               />
-
             </button>
-
 
             {/* NEXT */}
 
@@ -336,7 +319,6 @@ export default function Home() {
               type="button"
               className="introSliderArrow introSliderArrowRight"
               onClick={() => {
-
                 setIntroDirection("next");
 
                 setIntroImage(
@@ -344,18 +326,14 @@ export default function Home() {
                     (prev + 1) %
                     introImages.length
                 );
-
               }}
               aria-label="Next dental image"
             >
-
               <ArrowRight
                 size={20}
                 aria-hidden="true"
               />
-
             </button>
-
 
             {/* DOTS */}
 
@@ -363,9 +341,7 @@ export default function Home() {
               className="introSliderDots"
               aria-label="Dental clinic image navigation"
             >
-
               {introImages.map((_, index) => (
-
                 <button
                   key={index}
                   type="button"
@@ -375,7 +351,6 @@ export default function Home() {
                       : ""
                   }
                   onClick={() => {
-
                     setIntroDirection(
                       index > introImage
                         ? "next"
@@ -383,7 +358,6 @@ export default function Home() {
                     );
 
                     setIntroImage(index);
-
                   }}
                   aria-label={`Show dental image ${index + 1}`}
                   aria-current={
@@ -392,13 +366,10 @@ export default function Home() {
                       : undefined
                   }
                 />
-
               ))}
-
             </div>
 
           </div>
-
 
           {/* INTRO CONTENT */}
 
@@ -424,12 +395,21 @@ export default function Home() {
               speak and enjoy every moment.
             </p>
 
+            {/* ADDED FOR BALANCED CONTENT HEIGHT */}
+
+            <p>
+              At NOVADENT, we combine modern dental technology
+              with gentle, personalized care to make every visit
+              comfortable and every smile healthier.
+            </p>
+
             <Link
               to="/about"
               className="homeIntroButton"
               aria-label="Discover more about NOVADENT"
             >
               Discover NOVADENT
+
               <ArrowUpRight
                 size={17}
                 aria-hidden="true"
@@ -439,9 +419,7 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           STATS
@@ -451,7 +429,6 @@ export default function Home() {
         className="homeStats"
         aria-label="NOVADENT dental care statistics"
       >
-
         <div
           className="statsGlow"
           aria-hidden="true"
@@ -460,7 +437,6 @@ export default function Home() {
         <div className="container homeStatsGrid">
 
           <div className="homeStat interactiveStat">
-
             <div className="statIcon">
               <Award
                 size={21}
@@ -480,12 +456,9 @@ export default function Home() {
             <small>
               Trusted dental expertise
             </small>
-
           </div>
 
-
           <div className="homeStat interactiveStat">
-
             <div className="statIcon">
               <Users
                 size={21}
@@ -505,12 +478,9 @@ export default function Home() {
             <small>
               Personalized patient care
             </small>
-
           </div>
 
-
           <div className="homeStat interactiveStat">
-
             <div className="statIcon">
               <HeartPulse
                 size={21}
@@ -530,12 +500,9 @@ export default function Home() {
             <small>
               Complete oral care
             </small>
-
           </div>
 
-
           <div className="homeStat interactiveStat">
-
             <div className="statIcon">
               <Star
                 size={21}
@@ -554,13 +521,10 @@ export default function Home() {
             <small>
               Based on sample reviews
             </small>
-
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           TREATMENTS
@@ -570,7 +534,6 @@ export default function Home() {
         className="homeServices section"
         aria-labelledby="treatments-title"
       >
-
         <div className="container">
 
           <div className="sectionHeader enhancedSectionHeader">
@@ -598,13 +561,11 @@ export default function Home() {
 
             </div>
 
-
             <Link
               to="/treatments"
               className="outlineButton animatedButton"
               aria-label="Explore NOVADENT treatments"
             >
-
               <span>
                 Explore Treatments
               </span>
@@ -613,16 +574,13 @@ export default function Home() {
                 size={18}
                 aria-hidden="true"
               />
-
             </Link>
 
           </div>
 
-
           <div className="serviceGrid premiumServiceGrid">
 
             {services.map((service, index) => (
-
               <div
                 className="serviceReveal"
                 key={service.title}
@@ -630,20 +588,16 @@ export default function Home() {
                   "--delay": `${index * 120}ms`,
                 }}
               >
-
                 <ServiceCard
                   title={service.title}
                   text={service.text}
                   img={service.img}
                   icon={service.icon}
                 />
-
               </div>
-
             ))}
 
           </div>
-
 
           <div className="servicesBottomNote">
 
@@ -655,7 +609,6 @@ export default function Home() {
             </div>
 
             <div>
-
               <strong>
                 Not sure what treatment you need?
               </strong>
@@ -664,7 +617,6 @@ export default function Home() {
                 Start with a consultation and our dental
                 team will guide you.
               </span>
-
             </div>
 
             <Link
@@ -682,9 +634,7 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           WHY NOVADENT
@@ -726,7 +676,6 @@ export default function Home() {
               aria-hidden="true"
             ></div>
 
-
             <div className="homeWhyFloating">
 
               <div className="floatingIcon">
@@ -737,7 +686,6 @@ export default function Home() {
               </div>
 
               <div>
-
                 <strong>
                   Comfort First
                 </strong>
@@ -745,14 +693,11 @@ export default function Home() {
                 <span>
                   Your care matters
                 </span>
-
               </div>
 
             </div>
 
-
             <div className="floatingExperience">
-
               <strong>
                 10+
               </strong>
@@ -760,11 +705,9 @@ export default function Home() {
               <span>
                 Years
               </span>
-
             </div>
 
           </div>
-
 
           {/* CONTENT */}
 
@@ -793,11 +736,9 @@ export default function Home() {
               designed.
             </p>
 
-
             <div className="interactiveBenefits">
 
               {benefits.map((item) => (
-
                 <button
                   type="button"
                   key={item.title}
@@ -832,11 +773,9 @@ export default function Home() {
                   />
 
                 </button>
-
               ))}
 
             </div>
-
 
             <Link
               to="/about"
@@ -858,9 +797,7 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           DOCTORS
@@ -901,7 +838,6 @@ export default function Home() {
 
             </div>
 
-
             <Link
               to="/doctors"
               className="outlineButton animatedButton"
@@ -921,11 +857,9 @@ export default function Home() {
 
           </div>
 
-
           <div className="doctorGrid premiumDoctorGrid">
 
             {doctors.map((doctor, index) => (
-
               <div
                 className="doctorReveal"
                 key={doctor.name}
@@ -933,23 +867,18 @@ export default function Home() {
                   "--delay": `${index * 150}ms`,
                 }}
               >
-
                 <DoctorCard
                   name={doctor.name}
                   specialty={doctor.specialty}
                   img={doctor.img}
                 />
-
               </div>
-
             ))}
 
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           SMILE BANNER
@@ -977,7 +906,6 @@ export default function Home() {
           aria-hidden="true"
         ></div>
 
-
         <div className="container homeSmileContent">
 
           <div className="bannerFloatingTag">
@@ -993,34 +921,26 @@ export default function Home() {
 
           </div>
 
-
           <span className="eyebrow lightEyebrow">
             YOUR SMILE. YOUR CONFIDENCE.
           </span>
-
 
           <h2
             id="smile-banner-title"
             className="homeSmileTitle"
           >
-
             Feel good. Smile freely.
-
             <br />
-
             <span>
               Live confidently.
             </span>
-
           </h2>
-
 
           <p>
             Because a healthy smile is not only about how
             you look. It is about how confidently you laugh,
             speak and enjoy every moment.
           </p>
-
 
           <div className="bannerActions">
 
@@ -1044,9 +964,7 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
-
 
       {/* =====================================================
           TESTIMONIAL
@@ -1076,7 +994,6 @@ export default function Home() {
 
             </div>
 
-
             <div className="testimonialRatingTop">
 
               <div
@@ -1098,7 +1015,6 @@ export default function Home() {
 
           </div>
 
-
           <div className="testimonialBox">
 
             <div
@@ -1107,7 +1023,6 @@ export default function Home() {
             >
               “
             </div>
-
 
             <div className="testimonialContent">
 
@@ -1118,7 +1033,6 @@ export default function Home() {
               <blockquote>
                 {testimonials[activeReview].quote}
               </blockquote>
-
 
               <div className="testimonialAuthor">
 
@@ -1145,7 +1059,6 @@ export default function Home() {
 
             </div>
 
-
             {/* TESTIMONIAL CONTROLS */}
 
             <div className="testimonialControls">
@@ -1170,14 +1083,12 @@ export default function Home() {
 
               </button>
 
-
               <div
                 className="testimonialDots"
                 aria-label="Patient review navigation"
               >
 
                 {testimonials.map((_, index) => (
-
                   <button
                     type="button"
                     key={index}
@@ -1196,11 +1107,9 @@ export default function Home() {
                         : undefined
                     }
                   />
-
                 ))}
 
               </div>
-
 
               <button
                 type="button"
